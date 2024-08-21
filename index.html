@@ -8,9 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4e7e795b1c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add any additional styling needed for the merged content here */
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -48,7 +45,7 @@
                     </li>
                
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >Contact Us</a>
+                        <a class="nav-link" href="ContactUs.html" >Contact Us</a>
                     </li>
                    
                     <li class="nav-item">
@@ -240,6 +237,16 @@
         lockIcon.addEventListener('animationend', function() {
             document.querySelector('.chat-content').classList.add('blurred');
         });
+
+
+        window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar-dark');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
     </script>
 </body>
 </html>
