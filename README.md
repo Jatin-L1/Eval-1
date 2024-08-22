@@ -1,7 +1,7 @@
+![Screenshot 2024-08-22 152454](https://github.com/user-attachments/assets/03d08bd3-d6fc-4627-a9e7-709d84a8b263)
  <h1>🔒 SecureX</h1>
     <p><strong>SecureX</strong> is a private messaging platform designed to ensure secure and encrypted communication between users. The platform allows users to set unique passwords for each chat, enhancing privacy and making sure that only the intended participants can access the conversation.</p>
     <h2>🚀 Project Overview</h2>
-    ![Screenshot 2024-08-22 152454](https://github.com/user-attachments/assets/03d08bd3-d6fc-4627-a9e7-709d84a8b263)
     <p>SecureX is built in three phases:</p>
     <ul>
         <li><strong>Phase 1</strong>: Frontend Development with HTML, CSS, and Bootstrap.
