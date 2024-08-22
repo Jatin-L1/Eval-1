@@ -1,14 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e9e1d3; 
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f7f5f2, #e2e1e0);
+    color: #e5e7eb;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    animation: backgroundFade 2s ease-in-out;
 }
 
 .container {
@@ -16,11 +16,10 @@ body {
     flex-direction: row;
     width: 90%; 
     height: 90vh; 
-    background-color: #fff;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); 
+    background-color: #1f2937;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4); 
     border-radius: 10px;
     overflow: hidden;
-    animation: fadeIn 1s ease-in-out;
 }
 
 /* Part 1: Image Section */
@@ -39,25 +38,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f5f5f5; 
-    animation: fadeInUp 1s ease-in-out;
+    background-color: #2c3e50; 
     text-align: center;
 }
 
 .contact-section h1 {
     font-size: 52px; 
     margin-bottom: 25px;
-    font-weight: 600; 
+    font-weight: 700; 
     letter-spacing: 1px; 
-    animation: slideInRight 1s ease-in-out;
+    color: #ffffff;
+    background: linear-gradient(90deg, #2f81f7, #03dac6, #bb86fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .contact-section p {
     font-size: 20px; 
     margin-bottom: 20px;
     line-height: 1.8;
-    color: #555; 
-    animation: slideInRight 1.2s ease-in-out;
+    color: #b0bec5;
 }
 
 .contact-section ul {
@@ -65,20 +65,19 @@ body {
     padding: 0;
     margin: 20px 0;
     text-align: left;
-    animation: fadeInUp 1.2s ease-in-out;
 }
 
 .contact-section ul li {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #555;
+    color: #b0bec5;
     display: flex;
     align-items: center;
 }
 
 .contact-section ul li::before {
     content: "✔";
-    color: #333;
+    color: #bb86fc;
     margin-right: 10px;
 }
 
@@ -86,13 +85,11 @@ body {
     text-align: left;
     font-size: 18px;
     margin-top: 20px;
-    color: #666;
-    animation: fadeInRight 1.4s ease-in-out;
+    color: #90a4ae;
 }
 
 .social-icons {
     margin-top: 20px;
-    animation: fadeInUp 1.4s ease-in-out;
     display: flex;
     justify-content: center;
     margin-top: auto;
@@ -101,13 +98,13 @@ body {
 .social-icons a {
     margin: 0 15px;
     font-size: 30px; 
-    color: #333;
+    color: #bb86fc;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
-    color: #555;
+    color: #ffffff;
 }
 
 /* Part 3: User Info Section */
@@ -117,87 +114,82 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: fadeInUp 1.2s ease-in-out;
+    background-color: #2c3e50;
 }
 
 .info-section h4 {
     font-size: 24px; 
     margin-bottom: 20px;
     font-weight: 600; 
-    color: #333;
-    animation: fadeInRight 1.2s ease-in-out;
+    color: #ffffff;
 }
 
 .info-section p {
     font-size: 18px; 
     margin-bottom: 15px;
-    color: #666; /* Softer text color */
-    animation: fadeInRight 1.4s ease-in-out;
+    color: #90a4ae;
 }
 
 .info-section a {
-    color: #333;
+    color: #bb86fc;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .info-section a:hover {
-    color: #555; /* Hover effect for links */
+    color: #ffffff;
 }
 
 .info-section .additional-info {
     text-align: left;
     font-size: 18px;
     margin-top: 20px;
-    color: #666;
-    animation: fadeInRight 1.6s ease-in-out;
+    color: #90a4ae;
 }
 
 .contact-form h4 {
-    font-size: 24px; /* Increased font size */
+    font-size: 24px;
     margin-bottom: 20px;
     font-weight: 600;
-    animation: fadeInRight 1.6s ease-in-out;
+    color: #ffffff;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 14px; /* Slightly more padding for inputs */
+    padding: 14px;
     margin-bottom: 25px;
-    border: 1px solid #ccc;
-    font-size: 18px; /* Larger input text */
+    border: 1px solid #607d8b;
+    font-size: 18px;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #455a64;
+    color: #ffffff;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: fadeInRight 1.8s ease-in-out;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #333;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: #bb86fc;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
     outline: none;
 }
 
 .contact-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 18px; /* Larger button */
+    background-color: #bb86fc;
+    color: #1f2937;
+    padding: 18px;
     border: none;
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-    animation: bounceIn 2s ease-in-out;
 }
 
 .contact-form button:hover {
-    background-color: #555;
+    background-color: #ffffff;
+    color: #1f2937;
     transform: translateY(-3px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    animation: bounce 0.5s;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Media Queries for Responsiveness */
@@ -299,51 +291,9 @@ body {
 }
 
 /* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes slideInLeft {
     from {
         transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        transform: translateX(50px);
         opacity: 0;
     }
     to {
@@ -360,37 +310,5 @@ body {
     to {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-@keyframes bounceIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes backgroundFade {
-    from {
-        background-color: #f5f5f5;
-    }
-    to {
-        background-color: #e9e1d3;
     }
 }
