@@ -1,9 +1,9 @@
-body,html{
+body, html {
     margin: 0;
     height: 100%;
-    background: linear-gradient(90deg, #0d47a1, #1565c0, #29b6f6, #00e5ff, #1565c0, #0d47a1);
+    background: linear-gradient(45deg,#0d1117,#08306b,#035ead,#478cc9,#035ead,#08306b,#0d1117);
     background-size: 300% 300%;
-    animation: gradientBackground 15s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    animation: gradientBackground 8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
 }
 
 @keyframes gradientBackground {
@@ -16,4 +16,4 @@ body,html{
     100% {
         background-position: 0% 50%;
     }
-}
+}       
