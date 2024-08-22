@@ -43,8 +43,8 @@
     <ul>
         <li><strong>Jeeya</strong> 🧑‍💻 - <a href="https://github.com/JeeyaSharma" target="_blank">GitHub</a></li>
         <li><strong>Jatin</strong> 👨‍💻 - <a href="https://github.com/Jatin-L1" target="_blank">GitHub</a></li>
-        <li><strong>Hardik</strong> 👨‍💻 - <a href="[https://github.com/jeeya-github](https://github.com/Hardik-2005)" target="_blank">GitHub</a></li>
-        <li><strong>Ishaan</strong> 👨‍💻 - <a href="[https://github.com/jatin-github](https://github.com/ishaansimrantuli7)" target="_blank">GitHub</a></li>
+        <li><strong>Hardik</strong> 👨‍💻 - <a href="https://github.com/Hardik-2005" target="_blank">GitHub</a></li>
+        <li><strong>Ishaan</strong> 👨‍💻 - <a href="https://github.com/ishaansimrantuli7" target="_blank">GitHub</a></li>
     </ul> 
     <h2>🚀 Getting Started</h2>
     <p>To get started with SecureX, clone this repository and open the <code>index.html</code> file in your browser to see the UI. As you progress through each phase, additional instructions and functionality will be added.</p>
