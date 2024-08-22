@@ -1,8 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e9e1d3; 
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0d1117, #1f2937);
+    color: #e5e7eb;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +17,9 @@ body {
     flex-direction: row;
     width: 90%; 
     height: 90vh; 
-    background-color: #fff;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2); 
-    border-radius: 10px;
+    background: linear-gradient(145deg, #1f2937, #2c3e50);
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.6); 
+    border-radius: 15px;
     overflow: hidden;
     animation: fadeIn 1s ease-in-out;
 }
@@ -26,9 +27,9 @@ body {
 /* Part 1: Image Section */
 .image-section {
     width: 40%; 
-    background: url('https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws40h/WS40H_1x1-1.jpg?imwidth=1536') no-repeat center center;
+    background: url('images/DALL·E\ 2024-08-22\ 10.11.01\ -\ A\ vertical\ cartoon-style\ illustration\ of\ a\ customer\ contacting\ a\ business.\ The\ background\ is\ a\ light\ blueish-purple\ gradient\ with\ playful\,\ soft\ shapes.webp') no-repeat center center;
     background-size: cover;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* Inner shadow on the image */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Stronger inner shadow */
     animation: slideInLeft 1s ease-in-out, zoomIn 1.5s ease-in-out;
 }
 
@@ -39,24 +40,31 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f5f5f5; 
-    animation: fadeInUp 1s ease-in-out;
+    background: linear-gradient(145deg, #2c3e50, #1f2937); 
     text-align: center;
+    border-radius: 0 15px 15px 0; /* Rounded edges */
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .contact-section h1 {
-    font-size: 52px; 
+    font-size: 56px; 
     margin-bottom: 25px;
-    font-weight: 600; 
-    letter-spacing: 1px; 
+    font-weight: 700; 
+    letter-spacing: 1.5px; 
+    color: #ffffff;
+    background: linear-gradient(90deg, #ffffff, #d3d3d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: slideInRight 1s ease-in-out;
 }
 
+
 .contact-section p {
-    font-size: 20px; 
+    font-size: 18px; 
     margin-bottom: 20px;
     line-height: 1.8;
-    color: #555; 
+    color: #cdd9e5;
     animation: slideInRight 1.2s ease-in-out;
 }
 
@@ -69,45 +77,45 @@ body {
 }
 
 .contact-section ul li {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
-    color: #555;
+    color: #b0bec5;
     display: flex;
     align-items: center;
 }
 
 .contact-section ul li::before {
     content: "✔";
-    color: #333;
+    color: #03dac6;
     margin-right: 10px;
 }
 
 .contact-section .additional-content {
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
-    color: #666;
+    color: #90a4ae;
     animation: fadeInRight 1.4s ease-in-out;
 }
 
 .social-icons {
     margin-top: 20px;
-    animation: fadeInUp 1.4s ease-in-out;
     display: flex;
     justify-content: center;
     margin-top: auto;
+    animation: fadeInUp 1.4s ease-in-out;
 }
 
 .social-icons a {
     margin: 0 15px;
-    font-size: 30px; 
-    color: #333;
+    font-size: 28px; 
+    color: #03dac6;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
-    color: #555;
+    color: #ffffff;
 }
 
 /* Part 3: User Info Section */
@@ -117,6 +125,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: linear-gradient(145deg, #2c3e50, #1f2937);
+    border-radius: 15px 0 0 15px; /* Rounded edges */
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1.2s ease-in-out;
 }
 
@@ -124,79 +135,84 @@ body {
     font-size: 24px; 
     margin-bottom: 20px;
     font-weight: 600; 
-    color: #333;
+    color: #ffffff;
     animation: fadeInRight 1.2s ease-in-out;
 }
 
 .info-section p {
-    font-size: 18px; 
+    font-size: 16px; 
     margin-bottom: 15px;
-    color: #666; /* Softer text color */
+    color: #90a4ae;
     animation: fadeInRight 1.4s ease-in-out;
 }
 
 .info-section a {
-    color: #333;
+    color: #03dac6;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .info-section a:hover {
-    color: #555; /* Hover effect for links */
+    color: #ffffff;
 }
 
 .info-section .additional-info {
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
-    color: #666;
+    color: #90a4ae;
     animation: fadeInRight 1.6s ease-in-out;
 }
 
 .contact-form h4 {
-    font-size: 24px; /* Increased font size */
+    font-size: 24px;
     margin-bottom: 20px;
     font-weight: 600;
+    color: lightgrey;
     animation: fadeInRight 1.6s ease-in-out;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 14px; /* Slightly more padding for inputs */
-    margin-bottom: 25px;
-    border: 1px solid #ccc;
-    font-size: 18px; /* Larger input text */
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #607d8b;
+    font-size: 16px;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: #3a506b;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     animation: fadeInRight 1.8s ease-in-out;
+}
+.contact-form textarea::placeholder, .contact-form input::placeholder
+{
+    color: rgb(182, 176, 176);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #333;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: #03dac6;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
     outline: none;
 }
 
 .contact-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 18px; /* Larger button */
+    background-color: #03dac6;
+    color: #1f2937;
+    padding: 16px;
     border: none;
-    font-size: 18px; /* Increased font size */
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     animation: bounceIn 2s ease-in-out;
 }
 
 .contact-form button:hover {
-    background-color: #555;
+    background-color: #ffffff;
+    color: #1f2937;
     transform: translateY(-3px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
     animation: bounce 0.5s;
 }
 
@@ -229,12 +245,12 @@ body {
     .info-section h4,
     .contact-form input,
     .contact-form textarea {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .contact-form button {
         padding: 14px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -298,7 +314,7 @@ body {
     }
 }
 
-/* Animations */
+/* Original Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
