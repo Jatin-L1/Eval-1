@@ -27,7 +27,7 @@ body {
 /* Part 1: Image Section */
 .image-section {
     width: 40%; 
-    background: url('https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws40h/WS40H_1x1-1.jpg?imwidth=1536') no-repeat center center;
+    background: url('images/DALL·E\ 2024-08-22\ 10.11.01\ -\ A\ vertical\ cartoon-style\ illustration\ of\ a\ customer\ contacting\ a\ business.\ The\ background\ is\ a\ light\ blueish-purple\ gradient\ with\ playful\,\ soft\ shapes.webp') no-repeat center center;
     background-size: cover;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Stronger inner shadow */
     animation: slideInLeft 1s ease-in-out, zoomIn 1.5s ease-in-out;
