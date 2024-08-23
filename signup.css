@@ -1,0 +1,32 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #0d1117, #08306b, #035ead, #478cc9, #035ead, #08306b, #0d1117);
+    background-size: 300% 300%;
+    animation: gradientBackground 8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+    position: relative; 
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.signup-box {
+    height: 50vh;
+    width: 25vw;
+    border: 1px solid black;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -60%);
+    border-radius: 15px;
+}
