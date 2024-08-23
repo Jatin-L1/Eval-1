@@ -27,7 +27,7 @@ body {
 /* Part 1: Image Section */
 .image-section {
     width: 40%; 
-    background: url('https://image.hm.com/content/dam/global_campaigns/season_00/ladies/ws40h/WS40H_1x1-1.jpg?imwidth=1536') no-repeat center center;
+    background: url('Images/contact.webp') no-repeat center center;
     background-size: cover;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Stronger inner shadow */
     animation: slideInLeft 1s ease-in-out, zoomIn 1.5s ease-in-out;
@@ -61,7 +61,7 @@ body {
 
 
 .contact-section p {
-    font-size: 18px; 
+    font-size: 22px; 
     margin-bottom: 20px;
     line-height: 1.8;
     color: #cdd9e5;
@@ -77,7 +77,7 @@ body {
 }
 
 .contact-section ul li {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
     color: #b0bec5;
     display: flex;
@@ -132,7 +132,7 @@ body {
 }
 
 .info-section h4 {
-    font-size: 24px; 
+    font: size 44px; 
     margin-bottom: 20px;
     font-weight: 600; 
     color: #ffffff;
@@ -140,7 +140,7 @@ body {
 }
 
 .info-section p {
-    font-size: 16px; 
+    font-size: 22px; 
     margin-bottom: 15px;
     color: #90a4ae;
     animation: fadeInRight 1.4s ease-in-out;
@@ -158,13 +158,17 @@ body {
 
 .info-section .additional-info {
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 20px;
     color: #90a4ae;
     animation: fadeInRight 1.6s ease-in-out;
 }
 
-.contact-form h4 {
+.info-section{
+    display: flex;
+    justify-content: center;
+}
+.contact-form h2 {
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: 600;
@@ -242,7 +246,7 @@ body {
     .contact-section p,
     .info-section p,
     .contact-section ul li,
-    .info-section h4,
+    .info-section h2,
     .contact-form input,
     .contact-form textarea {
         font-size: 14px;
@@ -278,7 +282,7 @@ body {
     .contact-section p,
     .info-section p,
     .contact-section ul li,
-    .info-section h4,
+    .info-section h2,
     .contact-form input,
     .contact-form textarea {
         font-size: 14px;
@@ -302,7 +306,7 @@ body {
     .contact-section p,
     .info-section p,
     .contact-section ul li,
-    .info-section h4,
+    .info-section h2,
     .contact-form input,
     .contact-form textarea {
         font-size: 12px;
