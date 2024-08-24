@@ -45,6 +45,7 @@ body {
     border-radius: 0 15px 15px 0; /* Rounded edges */
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease-in-out;
+    height: 80vh;
 }
 
 .contact-section h1 {
@@ -170,7 +171,7 @@ body {
 }
 .contact-form h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
     color: lightgrey;
     animation: fadeInRight 1.6s ease-in-out;
@@ -180,7 +181,7 @@ body {
 .contact-form textarea {
     width: 100%;
     padding: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     border: 1px solid #607d8b;
     font-size: 16px;
     border-radius: 5px;
