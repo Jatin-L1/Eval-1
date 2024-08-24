@@ -45,6 +45,7 @@ body {
     border-radius: 0 15px 15px 0; /* Rounded edges */
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease-in-out;
+    height: 80vh;
 }
 
 .contact-section h1 {
@@ -62,7 +63,7 @@ body {
 
 .contact-section p {
     font-size: 18px; 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 1.8;
     color: #cdd9e5;
     animation: slideInRight 1.2s ease-in-out;
@@ -159,14 +160,14 @@ body {
 .info-section .additional-info {
     text-align: left;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 15px;
     color: #90a4ae;
     animation: fadeInRight 1.6s ease-in-out;
 }
 
 .contact-form h4 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
     color: lightgrey;
     animation: fadeInRight 1.6s ease-in-out;
@@ -176,7 +177,7 @@ body {
 .contact-form textarea {
     width: 100%;
     padding: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
     border: 1px solid #607d8b;
     font-size: 16px;
     border-radius: 5px;
