@@ -27,11 +27,7 @@ body {
 /* Part 1: Image Section */
 .image-section {
     width: 40%; 
-<<<<<<< HEAD
-    background: url('Images/contact.webp') no-repeat center center;
-=======
-    background: url('images/DALL·E\ 2024-08-22\ 10.11.01\ -\ A\ vertical\ cartoon-style\ illustration\ of\ a\ customer\ contacting\ a\ business.\ The\ background\ is\ a\ light\ blueish-purple\ gradient\ with\ playful\,\ soft\ shapes.webp') no-repeat center center;
->>>>>>> 4421d66e680823657734406655e12a0f622f9447
+    background: url('Images/DALL·E\ 2024-08-22\ 10.11.01\ -\ A\ vertical\ cartoon-style\ illustration\ of\ a\ customer\ contacting\ a\ business.\ The\ background\ is\ a\ light\ blueish-purple\ gradient\ with\ playful\,\ soft\ shapes.webp') no-repeat center center;
     background-size: cover;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7); /* Stronger inner shadow */
     animation: slideInLeft 1s ease-in-out, zoomIn 1.5s ease-in-out;
