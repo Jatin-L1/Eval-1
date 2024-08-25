@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.user_profile_container {
+    display: flex;
+}
+
+.side_nav {
+    color: white;
+    background-color: #0d1117;
+    height: 100vh;
+    width: 130px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Make the sidebar fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.side_nav .side_nav_contents {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.side_nav .profile_pic {
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: -50px;
+}
+
+.side_nav .profile_pic img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.side_nav .profile,
+.side_nav .chats,
+.side_nav .logout {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.side_nav .profile {
+    margin-top: 250px;
+}
+
+.side_nav .chats {
+    margin-left: -20px;
+}
+
+.side_nav .logout {
+    margin-left: -12px;
+}
+
+.main_content {
+    margin-left: 130px; 
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto; 
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.main_content h1
+{
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+}
+.main_content .profile_image .main_image
+{
+    height: 45vh;
+    width: 25vw;
+    
+}
+.main_content .profile_image .main_image img
+{
+    border-radius: 100%;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(151, 215, 56);
+}
+.main_content .profile_image
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.main_content .profile_image #edit_profile_picture
+{
+    margin-top: 25px;
+}
+.main_content .user_info,.main_content .security_settings, .main_content .chat_info
+{
+    background-color: #e7e5e5;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+.main_content .user_info #user_info
+{
+    font-size: 20px;
+    font-weight: 700;
+}
