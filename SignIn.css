@@ -11,16 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    overflow: hidden;
 }
 
 .container {
@@ -31,86 +22,74 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1.5s ease-in-out;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.login-section, .image-section {
-    flex: 1;
-    position: relative;
 }
 
 .login-section {
-    padding: 40px;
+    padding: 60px 50px;
     background-color: #fff;
-}
-
-.login-section h1 {
-    margin-bottom: 20px;
-    font-size: 30px; /* Reduced size for thinner appearance */
-    font-weight: 500; /* Lighter font weight */
-    color: #333;
+    flex: 1;
     position: relative;
-    cursor: pointer;
-    margin-top: 13px;
-    animation: textAppear 1.5s ease-in-out;
+    animation: slideInLeft 1.5s ease-in-out;
 }
 
-@keyframes textAppear {
+@keyframes slideInLeft {
     from {
-        transform: translateY(-10px);
+        transform: translateX(-100%);
         opacity: 0;
     }
     to {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
 
-.login-section h1:hover::after {
+.image-section {
+    flex: 1;
+    position: relative;
+    animation: slideInRight 1.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.login-section h1 {
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+}
+
+.login-section h1::after {
     content: '';
     display: block;
-    width: 40%; /* Smaller underline width */
-    height: 2px;
+    width: 0;
+    height: 3px;
     background-color: #6C33F6;
     position: absolute;
     left: 0;
     bottom: -5px;
-    transition: width 0.3s ease; /* Smooth transition */
+    transition: width 0.3s ease;
 }
 
 .login-section h1:hover::after {
-    width: 16%; /* Expand underline on hover */
+    width: 23%;
 }
 
 .input-group {
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     position: relative;
     display: flex;
     align-items: center;
-    animation: inputFocus 1.5s ease-in-out;
-}
-
-@keyframes inputFocus {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .input-group i {
@@ -122,73 +101,64 @@ body {
 
 .input-group input {
     width: 100%;
-    padding: 10px 10px 10px 40px; /* Space for the icon */
+    padding: 12px 15px 12px 45px;
     border: 1px solid #ddd;
     border-radius: 5px;
     outline: none;
     font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Layered shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .input-group input:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
 }
 
 .input-group input:focus {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on focus */
-    transform: translateY(-5px); /* More lift on focus */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
 .forgot-password {
     display: block;
-    margin-top: -5px;
-    margin-bottom: 25px;
+    margin-top: -10px;
+    margin-bottom: 30px;
     text-align: right;
     color: #6C33F6;
     text-decoration: none;
-    font-size: 17px;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 16px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
 }
 
 button {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #6C33F6;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Layered shadow */
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    animation: buttonFadeIn 1.5s ease-in-out;
-}
-
-@keyframes buttonFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 button:hover {
     background-color: #4A1FAF;
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 p {
     text-align: center;
     margin-top: 15px;
     color: #333;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 16px;
 }
 
 p a {
@@ -196,11 +166,14 @@ p a {
     text-decoration: none;
 }
 
+p a:hover {
+    text-decoration: underline;
+}
+
 .image-section img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* animation: fadeIn 1.5s ease-in-out; */
 }
 
 .image-section .overlay {
@@ -209,9 +182,8 @@ p a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Set alpha to 0 for transparency */
+    background-color: rgba(0, 0, 0, 0);
 }
-
 
 @media screen and (max-width: 768px) {
     .container {
@@ -222,12 +194,7 @@ p a {
         height: 250px;
     }
 
-    .text-content h3 {
-        font-size: 20px;
-    }
-
-    .text-content p {
-        font-size: 16px;
+    .login-section {
+        padding: 40px 30px;
     }
 }
-
