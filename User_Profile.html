@@ -17,14 +17,16 @@
                 <div class="profile_pic">
                     <img src="images/profile1.png" alt="">
                 </div>
-                <div class="profile">
-                    <p id="profile"><i class="fa-regular fa-user"></i>      My Profile</p>
-                </div>
-                <div class="chats">
-                    <p id="chats"><i class="fa-regular fa-comment"></i>      Chats</p>
-                </div>
-                <div class="logout">
-                    <p id="logout"><i class="fa-solid fa-right-from-bracket"></i>      Logout</p>
+                <div class="bottom_nav">
+                    <div class="profile">
+                        <p id="profile"><i class="fa-regular fa-user"></i>      My Profile</p>
+                    </div>
+                    <div class="chats">
+                        <p id="chats"><i class="fa-regular fa-comment"></i>      Chats</p>
+                    </div>
+                    <div class="logout">
+                        <p id="logout"><i class="fa-solid fa-right-from-bracket"></i>      Logout</p>
+                    </div>
                 </div>
              </div>
         </div>
@@ -42,44 +44,72 @@
              <div class="user_info">
                 <p id="user_info">Personal Information</p>
                 <div class="info_item">
-                    <label for="username">Username:</label>
-                    <span id="username">Emily</span>
+                    <div class="items">
+                        <label for="username">Username:</label>
+                        <span id="username">Emily</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="edit_username">Edit Username</button>
                 </div>
                 <div class="info_item">
-                    <label for="email">Email ID:</label>
-                    <span id="username">abc@gmail.com</span>
+                    <div class="items">
+                        <label for="email">Email ID:</label>
+                        <span id="email">abc@gmail.com</span>
+                    </div>
+                        <button type="button" class="btn  btn-sm" id="edit_email">Edit Email ID</button>
                 </div>
                 <div class="info_item">
-                    <label for="DOB">Date of Birth:</label>
-                    <span id="DOB">24th September,2004</span>
+                    <div class="items">
+                        <label for="alternate_email">Alternate Email:</label>
+                        <span id="alternate_email">-None-</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="add_email">Add Alternate Email ID</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="DOB">Date of Birth:</label>
+                        <span id="DOB">24th September,2004</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="edit_DOB">Edit DOB</button>
                 </div>
              </div>
             <!-- Security Settings -->
-             <div class="security_settings">
-                <p id="security_info">Security Settings</p>
-                <div class="info_item">
-                    <label for="Password">Password:</label>
-                    <span id="Password">**********</span>
-                </div>
-                <div class="info_item">
-                    <label for="two_factor">Two Factor Authentication:</label>
-                    <span id="two_factor">Enable</span>
-                </div>
-             </div>
+        <div class="security_settings">
+            <p id="security_info">Security Settings</p>
+            <div class="info_item">
+                <label for="Password">Password:</label>
+                <span id="Password">**********</span>
+                <button type="button" class="btn  btn-sm" id="change_password">Change Password</button>
+            </div>
+            <div class="info_item">
+                <label for="two_factor">Two-Factor Authentication:</label>
+                <span id="two_factor">Enable</span>
+                <button type="button" class="btn  btn-sm" id="disable_two_factor">Disable</button>
+            </div>
+        </div>
+
             <!-- Chat Preferences -->
              <div class="chat_info">
                 <p id="chat_info">Chat Preferences:</p>
                 <div class="info_item">
-                    <label for="active">Status:</label>
-                    <span id="active">Online</span>
+                    <div class="items">
+                        <label for="active">Status:</label>
+                        <span id="active">Online</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="change_status">Change Status</button>
                 </div>
                 <div class="info_item">
-                    <label for="notifications">Notifications:</label>
-                    <span id="notifications">Enabled</span>
+                    <div class="items">
+                        <label for="notifications">Notifications:</label>
+                        <span id="notifications">Enabled</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="disable_notifications">Disable</button>
                 </div>
                 <div class="info_item">
-                    <label for="autolock">Auto-Lock Chat:</label>
-                    <span id="autolock">After 5 minutes</span>
+                    <div class="items">
+                        <label for="autolock">Auto-Lock Chat:</label>
+                        <span id="autolock">After 5 minutes</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="change_setting">Change Setting</button>
                 </div>
              </div>
          </div>
