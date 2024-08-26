@@ -209,3 +209,31 @@ button:hover {
 .chat_info {
     margin-bottom: 50px;
 }
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #0d1117;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    background-color: #22262e;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+}
