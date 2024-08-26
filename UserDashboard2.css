@@ -535,7 +535,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Media Queries for Responsiveness and Disabling Animations */
+
 @media (max-width: 1024px) {
     .sidebar {
         width: 200px;
@@ -553,7 +553,7 @@ body {
         width: 300px;
     }
 
-    /* Disable animations for responsiveness */
+    
     .dashboard-container,
     .sidebar,
     .main-content,
@@ -610,7 +610,7 @@ body {
         width: 250px;
     }
 
-    /* Disable animations for responsiveness */
+  
     .dashboard-container,
     .sidebar,
     .main-content,
@@ -686,7 +686,7 @@ body {
         border-radius: 20px;
     }
 
-    /* Disable animations for responsiveness */
+    
     .dashboard-container,
     .sidebar,
     .main-content,
