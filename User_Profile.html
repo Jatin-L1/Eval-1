@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - SecureX</title>
+    <link rel="stylesheet" href="User_Profile.css">
+    <script src="https://kit.fontawesome.com/a91acee77a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="user_profile_container">
+        <!-- Side Nav -->
+         <div class="side_nav">
+            <div class="side_nav_contents">
+                <div class="profile_pic">
+                    <img src="images/profile1.png" alt="">
+                </div>
+                <div class="bottom_nav">
+                    <div class="profile">
+                        <p id="profile"><i class="fa-regular fa-user"></i>      My Profile</p>
+                    </div>
+                    <div class="chats">
+                        <p id="chats"><i class="fa-regular fa-comment"></i>      Chats</p>
+                    </div>
+                    <div class="logout">
+                        <p id="logout"><i class="fa-solid fa-right-from-bracket"></i>      Logout</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- Main content -->
+         <div class="main_content">
+            <h1>User Profile Dashboard</h1>
+            <!-- Profile Image -->
+            <div class="profile_image">
+                <div class="main_image">
+                    <img src="images/profile1.png" alt="">
+                </div>
+                <button type="button" class="btn btn-primary" id="edit_profile_picture">Edit Profile Picture</button>
+            </div>
+            <!-- User Information -->
+             <div class="user_info">
+                <p id="user_info">Personal Information</p>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="username">Username:</label>
+                        <span id="username">Emily</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="edit_username">Edit Username</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="email">Email ID:</label>
+                        <span id="email">abc@gmail.com</span>
+                    </div>
+                        <button type="button" class="btn  btn-sm" id="edit_email">Edit Email ID</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="alternate_email">Alternate Email:</label>
+                        <span id="alternate_email">-None-</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="add_email">Add Alternate Email ID</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="DOB">Date of Birth:</label>
+                        <span id="DOB">24th September,2004</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="edit_DOB">Edit DOB</button>
+                </div>
+             </div>
+            <!-- Security Settings -->
+        <div class="security_settings">
+            <p id="security_info">Security Settings</p>
+            <div class="info_item">
+                <label for="Password">Password:</label>
+                <span id="Password">**********</span>
+                <button type="button" class="btn  btn-sm" id="change_password">Change Password</button>
+            </div>
+            <div class="info_item">
+                <label for="two_factor">Two-Factor Authentication:</label>
+                <span id="two_factor">Enable</span>
+                <button type="button" class="btn  btn-sm" id="disable_two_factor">Disable</button>
+            </div>
+        </div>
+
+            <!-- Chat Preferences -->
+             <div class="chat_info">
+                <p id="chat_info">Chat Preferences:</p>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="active">Status:</label>
+                        <span id="active">Online</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="change_status">Change Status</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="notifications">Notifications:</label>
+                        <span id="notifications">Enabled</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="disable_notifications">Disable</button>
+                </div>
+                <div class="info_item">
+                    <div class="items">
+                        <label for="autolock">Auto-Lock Chat:</label>
+                        <span id="autolock">After 5 minutes</span>
+                    </div>
+                    <button type="button" class="btn  btn-sm" id="change_setting">Change Setting</button>
+                </div>
+             </div>
+         </div>
+    </div>
+</body>
+</html>

@@ -144,14 +144,21 @@ form button[type=submit] {
     font-size: 1rem;
     font-weight: 600;
     background-color: #1212eb;
-    color: #fff;
+    color: white;
     border-radius: 25px;
     animation: buttonPulse 1.5s ease-in-out 1;
 }
+form button[type=submit] a
+{
+    color: #fff;
+    text-decoration: none;
+}
 
 @keyframes buttonPulse {
-    from { transform: scale(1.25); background-color: #1212eb; }
-    to { transform: scale(1); background-color: #5f8be9; }
+    /* from { transform: scale(1.25); background-color: #1212eb; }
+    to { transform: scale(1); background-color: #5f8be9; } */
+    from { transform: scale(1.25); color: white ;}
+    to { transform: scale(1); color: white; }
 }
 
 form button[type=submit]:hover {
