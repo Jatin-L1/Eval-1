@@ -1,30 +1,30 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 .user_profile_container {
     display: flex;
-    flex-direction: column;
+    min-height: 100vh;
 }
 
 .side_nav {
     color: white;
     background-color: #0d1117;
     height: 100vh;
-    width: 160px;
-    font-weight: 600;
+    width: 60px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     padding: 20px 0;
     box-shadow: 3px 0 12px rgba(0, 0, 0, 0.3);
+    transition: width 0.3s ease; 
 }
 
 .side_nav .side_nav_contents {
@@ -32,8 +32,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    flex-grow: 1;
-    justify-content: flex-start;
 }
 
 .side_nav .profile_pic {
@@ -63,17 +61,17 @@
 .side_nav .bottom_nav a {
     color: white;
     text-decoration: none;
+    padding: 10px 0;
+    font-size: 14px; 
 }
 
 .side_nav .profile,
 .side_nav .chats,
 .side_nav .logout {
-    margin: 5px 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 8px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -86,20 +84,14 @@
     border-radius: 5px;
 }
 
-.side_nav .profile i,
-.side_nav .chats i,
-.side_nav .logout i {
-    margin-right: 8px;
-}
-
 .main_content {
-    margin-left: 160px;
+    margin-left: 60px; 
     flex-grow: 1;
     height: 100vh;
     overflow-y: auto;
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
+    transition: margin-left 0.3s ease; 
 }
 
 .main_content .welcome_message {
@@ -155,7 +147,9 @@
     font-size: 16px;
 }
 
-.main_content .user_info, .main_content .security_settings, .main_content .chat_info {
+.main_content .user_info, 
+.main_content .security_settings, 
+.main_content .chat_info {
     background-color: #fff;
     border-radius: 8px;
     margin-top: 30px;
@@ -163,7 +157,9 @@
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.main_content .user_info #user_info, .main_content .security_settings #security_info, .main_content .chat_info #chat_info {
+.main_content .user_info #user_info, 
+.main_content .security_settings #security_info, 
+.main_content .chat_info #chat_info {
     font-size: 20px;
     font-weight: 700;
 }
@@ -240,43 +236,47 @@
     color: #fff;
 }
 
-
 @media (max-width: 992px) {
-    .user_profile_container {
-        flex-direction: column;
+    .side_nav {
+        width: 50px; 
+    }
+
+    .side_nav .bottom_nav a {
+        font-size: 12px; 
     }
 
     .main_content {
-        margin-left: 0;
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: 50px; 
     }
+}
 
+@media (max-width: 768px) {
     .side_nav {
-        width: 100%;
-        height: auto;
-        position: relative;
-        box-shadow: none;
-        margin-bottom: 20px;
-        padding: 10px 0;
+        width: 40px; 
     }
 
-    .side_nav .bottom_nav {
-        margin-top: 20px;
+    .side_nav .bottom_nav a {
+        font-size: 10px;
     }
 
-    .side_nav .profile_pic {
-        margin-top: 10px;
-        width: 60%;
-    }
-
-    .navbar-toggler {
-        display: block;
-        margin-right: 20px;
+    .main_content {
+        margin-left: 40px; 
     }
 }
 
 @media (max-width: 576px) {
+    .side_nav {
+        width: 35px; 
+    }
+
+    .side_nav .bottom_nav a {
+        font-size: 8px; 
+    }
+
+    .main_content {
+        margin-left: 35px; 
+    }
+
     .main_content .welcome_message h2 {
         font-size: 24px;
     }
@@ -291,7 +291,9 @@
         font-size: 14px;
     }
 
-    .main_content .user_info, .main_content .security_settings, .main_content .chat_info {
+    .main_content .user_info, 
+    .main_content .security_settings, 
+    .main_content .chat_info {
         padding: 15px;
         margin-top: 20px;
     }
@@ -300,7 +302,8 @@
         align-items: flex-start;
     }
 
-    .info_item label, .info_item span {
+    .info_item label, 
+    .info_item span {
         min-width: auto;
         margin-right: 0;
     }
