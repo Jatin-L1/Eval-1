@@ -1,29 +1,30 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
 .user_profile_container {
     display: flex;
+    min-height: 100vh;
 }
 
 .side_nav {
     color: white;
     background-color: #0d1117;
     height: 100vh;
-    width: 160px;
-    font-weight: 600;
+    width: 60px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     padding: 20px 0;
-    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for the sidebar */
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.3);
+    transition: width 0.3s ease; 
 }
 
 .side_nav .side_nav_contents {
@@ -31,8 +32,6 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    flex-grow: 1;
-    justify-content: flex-start;
 }
 
 .side_nav .profile_pic {
@@ -55,19 +54,24 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 400px;
+    margin-top: auto;
     padding-bottom: 20px;
+}
+
+.side_nav .bottom_nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    font-size: 14px; 
 }
 
 .side_nav .profile,
 .side_nav .chats,
 .side_nav .logout {
-    margin: 5px 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 8px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -80,37 +84,52 @@
     border-radius: 5px;
 }
 
-.side_nav .profile i,
-.side_nav .chats i,
-.side_nav .logout i {
-    margin-right: 8px;
-}
-
 .main_content {
-    margin-left: 160px;
+    margin-left: 60px; 
     flex-grow: 1;
     height: 100vh;
     overflow-y: auto;
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
+    transition: margin-left 0.3s ease; 
+}
+
+.main_content .welcome_message {
+    margin-top: 40px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.main_content .welcome_message h2 {
+    font-weight: 600;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px rgb(195, 193, 193);
+}
+
+.main_content .welcome_message p {
+    font-weight: 500;
+    color: rgb(99, 98, 98);
 }
 
 .main_content h1 {
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 30px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgb(165, 165, 165);
 }
 
 .main_content .profile_image .main_image {
-    height: 45vh;
-    width: 25vw;
+    max-width: 100%;
+    width: 250px;
+    height: auto;
 }
 
 .main_content .profile_image .main_image img {
     border-radius: 100%;
-    height: 100%;
     width: 100%;
+    height: auto;
     padding: 5px;
     background-color: rgb(151, 215, 56);
 }
@@ -123,18 +142,24 @@
 }
 
 .main_content .profile_image #edit_profile_picture {
-    margin-top: 25px;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
 
-.main_content .user_info, .main_content .security_settings, .main_content .chat_info {
-    background-color: #fff; /* Change background to pure white for contrast */
-    border-radius: 8px; /* Slightly rounded corners for a modern look */
-    margin-top: 50px;
+.main_content .user_info, 
+.main_content .security_settings, 
+.main_content .chat_info {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 30px;
     padding: 20px;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15); /* Softer and deeper shadow for a floating effect */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.main_content .user_info #user_info, .main_content .security_settings #security_info, .main_content .chat_info #chat_info {
+.main_content .user_info #user_info, 
+.main_content .security_settings #security_info, 
+.main_content .chat_info #chat_info {
     font-size: 20px;
     font-weight: 700;
 }
@@ -145,41 +170,145 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-label {
+.info_item label {
     font-weight: 600;
     color: rgb(75, 75, 75);
-    min-width: 200px;
+    min-width: 150px;
     margin-right: 20px;
     text-align: left;
 }
 
-span {
+.info_item span {
     color: rgb(99, 98, 98);
     flex-grow: 1;
     text-align: left;
     margin-right: 20px;
+    margin-top: 5px;
 }
 
-button {
-    flex-shrink: 0;
-    margin-left: 10px;
+.info_item button {
+    align-self: flex-end;
+    margin-top: 10px;
     background-color: #047bfb;
     border-color: #004085;
     color: white;
 }
 
-button:hover {
-    background-color: #002752;
-    border-color: #002752;
-}
-
-#edit_profile_picture:hover {
+.info_item button:hover {
     background-color: #002752;
     border-color: #002752;
 }
 
 .chat_info {
     margin-bottom: 50px;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #0d1117;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    background-color: #22262e;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .side_nav {
+        width: 50px; 
+    }
+
+    .side_nav .bottom_nav a {
+        font-size: 12px; 
+    }
+
+    .main_content {
+        margin-left: 50px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .side_nav {
+        width: 40px; 
+    }
+
+    .side_nav .bottom_nav a {
+        font-size: 10px;
+    }
+
+    .main_content {
+        margin-left: 40px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .side_nav {
+        width: 35px; 
+    }
+
+    .side_nav .bottom_nav a {
+        font-size: 8px; 
+    }
+
+    .main_content {
+        margin-left: 35px; 
+    }
+
+    .main_content .welcome_message h2 {
+        font-size: 24px;
+    }
+
+    .main_content .profile_image .main_image {
+        width: 200px; 
+        height: auto;
+    }
+
+    .main_content .profile_image #edit_profile_picture {
+        padding: 8px 16px; 
+        font-size: 14px;
+    }
+
+    .main_content .user_info, 
+    .main_content .security_settings, 
+    .main_content .chat_info {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .info_item {
+        align-items: flex-start;
+    }
+
+    .info_item label, 
+    .info_item span {
+        min-width: auto;
+        margin-right: 0;
+    }
+
+    .info_item span {
+        margin-top: 0;
+    }
 }
