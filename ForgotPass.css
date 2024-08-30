@@ -53,7 +53,7 @@ body {
 }
 
 .image-section {
-    flex: 1.2; /* Slightly larger to extend into the text section */
+    flex: 1.2; 
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -63,9 +63,9 @@ body {
 }
 
 .image-section img {
-    max-width: 110%; /* Slightly larger to extend into the text section */
+    max-width: 110%; 
     height: auto;
-    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow to create depth */
+    box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1); 
 }
 
 .form-section {
@@ -76,7 +76,7 @@ body {
     justify-content: center;
     background-color: white;
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.05);
-    animation: slideInFromRight 1.5s ease-out; /* Slide in from right */
+    animation: slideInFromRight 1.5s ease-out; 
 }
 
 .form-section h1 {
@@ -91,7 +91,7 @@ body {
     color: #666;
     font-size: 1rem;
     line-height: 1.5;
-    animation: fadeIn 2s ease-out 0.5s; /* Fade in with delay */
+    animation: fadeIn 2s ease-out 0.5s; 
 }
 
 .form-section form {
