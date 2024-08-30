@@ -24,9 +24,8 @@ body {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Part 1: Image Section */
 .image-section {
-    width: 33.33%; /* Adjusted to 1/3 of the container width */
+    width: 33.33%;
     height: 100%;
     background: url('images/ContactUs.webp') no-repeat center center;
     background-size: cover;
@@ -34,9 +33,9 @@ body {
     animation: slideInLeft 1s ease-in-out, zoomIn 1.5s ease-in-out;
 }
 
-/* Part 2: Contact Us Section */
+
 .contact-section {
-    width: 33.33%; /* Adjusted to 1/3 of the container width */
+    width: 33.33%; 
     padding: 5vh 4vw;
     display: flex;
     flex-direction: column;
@@ -117,9 +116,8 @@ body {
     color: #ffffff;
 }
 
-/* Part 3: User Info Section */
 .info-section {
-    width: 33.33%; /* Adjusted to 1/3 of the container width */
+    width: 33.33%; 
     padding: 5vh 4vw;
     display: flex;
     flex-direction: column;
@@ -216,7 +214,7 @@ body {
     animation: bounce 0.5s;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 1200px) {
     .container {
         flex-direction: column;
@@ -262,7 +260,7 @@ body {
     }
 
     .image-section {
-        display: none; /* Hide image section on smaller screens */
+        display: none; 
     }
 
     .contact-section,
@@ -314,7 +312,7 @@ body {
     }
 }
 
-/* Original Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
