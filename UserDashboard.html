@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="UserDashboard2.css">
 </head>
 <body>
-
 <!-- Unique Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-custom">
+<!-- <nav class="navbar navbar-expand-lg navbar-custom">
     <a class="navbar-brand" href="#">
         <img src="images/logo.png" alt="Logo" class="logo" />
         <span class="brand-text">SecureX</span>
@@ -44,16 +43,14 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav> -->
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <input type="text" id="sidebarSearch" class="form-control" placeholder="Search contacts...">
                 <button id="toggleSidebar" class="btn btn-secondary"><i class="fas fa-bars"></i></button>
             </div>
             <ul class="nav flex-column user-list" id="userList">
-                <!-- Example User -->
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
                         <img src="images/profile2.png" alt="Avatar" class="avatar">
@@ -62,17 +59,35 @@
                         <span class="badge badge-danger unread-messages">2</span>
                     </a>
                 </li>
-                <!-- Add more users here -->
             </ul>
         </div>
-                
+        <div class="user_profile_container">
+            <!-- Side Nav -->
+            <div class="side_nav">
+                <div class="side_nav_contents">
+                    <div class="profile_pic">
+                        <img src="images/profile1.png" alt="">
+                    </div>
+                    <div class="bottom_nav">
+                        <div class="profile">
+                            <a href="User_Profile.html"><i class="fa-regular fa-user"></i></a>
+                        </div>
+                        <div class="chats">
+                            <a href="UserDashboard.html"><i class="fa-regular fa-comment"></i></a>
+                        </div>
+                        <div class="logout">
+                            <a href="#"><i class="fa-solid fa-right-from-bracket"></i></a>
+                        </div>
+                    </div>
+                 </div>
+            </div>    
         <!-- Main Content -->
         <div class="main-content" id="mainContent">
             <div class="header">
-                <div class="search-bar">
+                <!-- <div class="search-bar">
                     <input type="text" id="searchId" class="form-control" placeholder="Enter User ID to chat">
                     <button class="btn btn-primary" id="searchButton">Search</button>
-                </div>
+                </div> -->
                 <div class="user-info">
                     <img src="images/profile1.png" alt="Profile" class="user-img" width="40px" height="40px">
                     <span style="color: black;">Sharma</span>
