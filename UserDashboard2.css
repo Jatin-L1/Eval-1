@@ -1,4 +1,4 @@
-body {
+ body {
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #50b8b5, #3862e9);
     margin: 0;
@@ -699,16 +699,16 @@ body {
     }
 }
 
-/* Unique Navbar styles */
+
 .navbar-custom {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)); /* Vertical gradient */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.1)); 
     padding: 10px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deep shadow */
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     margin: 10px auto;
     max-width: 95%;
-    z-index: 1001; /* Keeps navbar on top */
+    z-index: 1001; 
 }
 
 .navbar-brand {
@@ -719,8 +719,8 @@ body {
 .navbar-brand .logo {
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Circular logo */
-    background: linear-gradient(135deg, #50b8b5, #3862e9); /* Gradient in logo */
+    border-radius: 50%; 
+    background: linear-gradient(135deg, #50b8b5, #3862e9); 
     padding: 5px;
 }
 
@@ -768,7 +768,7 @@ body {
 
 .navbar-toggler {
     border: none;
-    background: linear-gradient(135deg, #50b8b5, #3862e9); /* Gradient for toggler */
+    background: linear-gradient(135deg, #50b8b5, #3862e9); 
     padding: 10px;
     border-radius: 5px;
 }
@@ -778,10 +778,10 @@ body {
 }
 
 .navbar-nav .dropdown-menu {
-    background-color: rgba(0, 0, 0, 0.85); /* Dark background for dropdowns */
+    background-color: rgba(0, 0, 0, 0.85); 
     border-radius: 10px;
     border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for dropdown */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .navbar-nav .dropdown-menu .dropdown-item {
@@ -790,8 +790,8 @@ body {
 }
 
 .navbar-nav .dropdown-menu .dropdown-item:hover {
-    background-color: #50b8b5; /* Background on hover */
-    color: white; /* Text color on hover */
+    background-color: #50b8b5; 
+    color: white; 
 }
 
 @media (max-width: 768px) {
@@ -822,3 +822,8 @@ body {
         font-size: 1.2rem;
     }
 }
+ 
+
+
+
+ 
