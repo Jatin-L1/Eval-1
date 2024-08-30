@@ -37,13 +37,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+    /* background: linear-gradient(135deg, #48c6ef 0%,  #020235 100%); */
+    background-color: #020235;
 }
 
 .container {
     display: flex;
     background-color: white;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     max-width: 900px;
