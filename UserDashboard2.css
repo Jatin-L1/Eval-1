@@ -23,7 +23,6 @@ body {
     height: 100vh;
     animation: slideIn 1.5s ease-out forwards;
 }
-
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -108,7 +107,6 @@ body {
         transform: scale3d(1, 1, 1);
     }
 }
-
 .user-name {
     flex-grow: 1;
     color: white;
@@ -121,7 +119,6 @@ body {
     margin-right: 10px;
     animation: fadeInStatus 1.5s ease-out forwards;
 }
-
 @keyframes fadeInStatus {
     0% {
         opacity: 0;
@@ -132,11 +129,9 @@ body {
         transform: translateX(0);
     }
 }
-
 .status-indicator.online {
     background-color: green;
 }
-
 .status-indicator.offline {
     background-color: gray;
 }
@@ -149,7 +144,6 @@ body {
     font-size: 0.8rem;
     animation: fadeInUnread 1.5s ease-out forwards;
 }
-
 @keyframes fadeInUnread {
     0% {
         opacity: 0;
@@ -160,8 +154,6 @@ body {
         transform: scale(1);
     }
 }
-
-
 @keyframes slideInMainContent {
     0% {
         opacity: 0;
@@ -172,11 +164,9 @@ body {
         transform: translateX(0);
     }
 }
-
 .main-content.expanded {
     margin-left: 60px;
 }
-
 .header {
     background-color: #f8f9fa;
     padding: 20px;
@@ -198,7 +188,6 @@ body {
         transform: translateY(0);
     }
 }
-
 .search-bar input {
     width: 300px;
     margin-right: 10px;
@@ -209,7 +198,6 @@ body {
     transition: all 0.3s ease;
     animation: fadeInSearchBar 1.5s ease-out forwards;
 }
-
 @keyframes fadeInSearchBar {
     0% {
         opacity: 0;
@@ -220,14 +208,12 @@ body {
         transform: translateX(0);
     }
 }
-
 .search-bar input:focus {
     width: 400px;
     background-color: #e8f0fe;
     outline: none;
     transform: scale(1.05);
 }
-
 .search-bar button {
     padding: 10px 20px;
     border-radius: 50px;
@@ -237,7 +223,6 @@ body {
     transition: background-color 0.3s ease;
     animation: fadeInButton 1.5s ease-out forwards;
 }
-
 @keyframes fadeInButton {
     0% {
         opacity: 0;
@@ -248,7 +233,6 @@ body {
         transform: translateX(0);
     }
 }
-
 .search-bar button:hover {
     background-color: #0b5ed7;
 }
@@ -258,7 +242,6 @@ body {
     align-items: center;
     animation: fadeInUserInfo 1.5s ease-out forwards;
 }
-
 @keyframes fadeInUserInfo {
     0% {
         opacity: 0;
@@ -269,7 +252,6 @@ body {
         transform: translateY(0);
     }
 }
-
 .user-info .user-img {
     width: 40px;
     height: 40px;
@@ -277,41 +259,33 @@ body {
     margin-right: 10px;
     animation: bounceInUserImg 1.5s ease-out forwards;
 }
-
 @keyframes bounceInUserImg {
     0%, 20%, 40%, 60%, 80%, 100% {
         -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
         animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
     }
-
     0% {
         opacity: 0;
         transform: scale3d(.3, .3, .3);
     }
-
     20% {
         transform: scale3d(1.1, 1.1, 1.1);
     }
-
     40% {
         transform: scale3d(.9, .9, .9);
     }
-
     60% {
         opacity: 1;
         transform: scale3d(1.03, 1.03, 1.03);
     }
-
     80% {
         transform: scale3d(.97, .97, .97);
     }
-
     100% {
         opacity: 1;
         transform: scale3d(1, 1, 1);
     }
 }
-
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -321,7 +295,6 @@ body {
     border-radius: 0 10px 10px 0;
     animation: fadeInChatContainer 1.5s ease-out forwards;
 }
-
 @keyframes fadeInChatContainer {
     0% {
         opacity: 0;
@@ -332,14 +305,12 @@ body {
         transform: translateY(0);
     }
 }
-
 .chat-area {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
     animation: fadeInChatArea 1.5s ease-out forwards;
 }
-
 @keyframes fadeInChatArea {
     0% {
         opacity: 0;
@@ -350,7 +321,6 @@ body {
         transform: translateY(0);
     }
 }
-
 .message-input {
     display: flex;
     align-items: center;
@@ -359,7 +329,6 @@ body {
     background-color: #fff;
     animation: fadeInMessageInput 1.5s ease-out forwards;
 }
-
 @keyframes fadeInMessageInput {
     0% {
         opacity: 0;
@@ -370,7 +339,6 @@ body {
         transform: translateY(0);
     }
 }
-
 .message-input input {
     flex: 1;
     margin-right: 10px;
@@ -381,7 +349,6 @@ body {
     transition: all 0.3s ease;
     animation: fadeInMessageInputField 1.5s ease-out forwards;
 }
-
 @keyframes fadeInMessageInputField {
     0% {
         opacity: 0;
@@ -392,7 +359,6 @@ body {
         transform: translateY(0);
     }
 }
-
 .message-input button {
     background-color: #0d6efd;
     color: white;
@@ -402,7 +368,6 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     animation: fadeInSendButton 1.5s ease-out forwards;
 }
-
 @keyframes fadeInSendButton {
     0% {
         opacity: 0;
@@ -413,31 +378,23 @@ body {
         transform: translateY(0);
     }
 }
-
 .message-input button:hover {
     background-color: #0b5ed7;
     transform: scale(1.1);
 }
-
-
 @media (max-width: 1024px) {
     .sidebar {
         width: 200px;
     }
-
     .main-content {
         margin-left: 200px;
     }
-
     .search-bar input {
         width: 200px;
     }
-
     .search-bar input:focus {
         width: 300px;
     }
-
-    
     .dashboard-container,
     .sidebar,
     .main-content,
