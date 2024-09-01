@@ -232,7 +232,10 @@ html, body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
 }
 
+<<<<<<< HEAD
 /* Below Features Content */
+=======
+>>>>>>> e009b11397fe7a5dac27a011511e8945b71b63d2
 .below_features_content {
     display: flex;
     justify-content: space-between;
@@ -262,6 +265,7 @@ html, body {
     line-height: 1.5;
     margin-bottom: 0;
 }
+<<<<<<< HEAD
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -336,3 +340,5 @@ html, body {
         font-size: 13px;
     }
 }
+=======
+>>>>>>> e009b11397fe7a5dac27a011511e8945b71b63d2
