@@ -155,8 +155,6 @@ form button[type=submit] a
 }
 
 @keyframes buttonPulse {
-    /* from { transform: scale(1.25); background-color: #1212eb; }
-    to { transform: scale(1); background-color: #5f8be9; } */
     from { transform: scale(1.25); color: white ;}
     to { transform: scale(1); color: white; }
 }
