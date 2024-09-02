@@ -203,11 +203,6 @@ body {
     color: #00cfc1;
     transform: scale(1.1);
 }
-
-/* .chartjs-render-monitor {
-    animation: chartFadeIn 2s ease-in-out;
-} */
-
 @keyframes chartFadeIn {
     0% {
         opacity: 0;

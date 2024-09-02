@@ -1,4 +1,4 @@
-body {
+.body {
     font-family: 'Poppins', 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #0d1117, #1f2937);
     margin: 0;
@@ -773,8 +773,6 @@ h1, h6 {
     box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.6);
     overflow: hidden;
 }
-
-/* Add a professional gradient overlay */
 .contact-background::before {
     content: "";
     position: absolute;
@@ -787,15 +785,12 @@ h1, h6 {
     z-index: 1;
 }
 
-/* Ensure text and other content appear above the overlay */
 .contact-background * {
     position: relative;
     z-index: 2;
     color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Stronger shadow for better readability */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); 
 }
-
-/* Additional styling for better professional look */
 .contact-section h1 {
     font-size: 2.8rem;
     font-weight: 800;
