@@ -46,7 +46,7 @@
                         </div>
                     </li>                    
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >About Us</a>
+                        <a class="nav-link" href="AboutUs.html" >About Us</a>
                     </li>
                
                     <li class="nav-item">
@@ -163,10 +163,10 @@
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Features</a></li>
+                        <li><a href="features.html">Features</a></li>
                         <li><a href="ContactUs.html">Contact Us</a></li>
                         <li><a href="signup.html">Sign Up</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -178,7 +178,7 @@
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/jatin_sharma_2435/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -205,7 +205,7 @@
                 }
             });
         });
-
+        // Section Visibility on Scroll:
         document.addEventListener('scroll', function() {
             const secureSection = document.querySelector('.secure-chat-section');
             const secureSectionPosition = secureSection.getBoundingClientRect().top;
@@ -239,6 +239,7 @@
             emailSyncSection.classList.add('visible');
         }
 
+        // Blur Chat Content After Lock Icon Animation:
         const lockIcon = document.querySelector('.lock-icon');
         lockIcon.addEventListener('animationend', function() {
             document.querySelector('.chat-content').classList.add('blurred');
