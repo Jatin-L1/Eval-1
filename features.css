@@ -1,7 +1,7 @@
 /* General Styles */
 /* Navbar styles */
 .navbar-dark {
-    background-color: #0d1117; 
+    background-color: linear-gradient(135deg, #0a0c1a, #0b1b34, #10243f, #152e4a);
     transition: background-color 0.4s ease, color 0.4s ease;
     padding: 12px 20px;
     border-bottom: 1px solid rgba(60, 60, 100, 0.5);
@@ -130,7 +130,11 @@ html, body {
 }
 
 #features_heading {
-    color: #00f7ff;
+    /* color: #00f7ff; */
+    background: linear-gradient(135deg, #a2e9ff, #72cfff, #4ab3ff, #c2f4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-align: center;
     font-weight: 600;
     margin-top: 20px;
@@ -232,10 +236,7 @@ html, body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); 
 }
 
-<<<<<<< HEAD
 /* Below Features Content */
-=======
->>>>>>> e009b11397fe7a5dac27a011511e8945b71b63d2
 .below_features_content {
     display: flex;
     justify-content: space-between;
@@ -265,9 +266,8 @@ html, body {
     line-height: 1.5;
     margin-bottom: 0;
 }
-<<<<<<< HEAD
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     #features_heading {
         font-size: 45px;
@@ -281,7 +281,7 @@ html, body {
     .feature-card {
         width: 90%;
         height: auto;
-        margin-bottom: 50px; /* Adjusted spacing between the cards */
+        margin-bottom: 50px; 
     }
 
     .features_content {
@@ -340,5 +340,3 @@ html, body {
         font-size: 13px;
     }
 }
-=======
->>>>>>> e009b11397fe7a5dac27a011511e8945b71b63d2
