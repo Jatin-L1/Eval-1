@@ -337,3 +337,30 @@ body {
 .timeline-body {
     margin-top: 10px;
 }
+
+#community-outreach .outreach-card {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#community-outreach .outreach-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#community-outreach i {
+    color: #04c4d9;
+}
+
+#community-outreach h3 {
+    color: #04c4d9;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+#community-outreach p {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
