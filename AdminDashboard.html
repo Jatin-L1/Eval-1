@@ -151,6 +151,77 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const toggleSidebarBtn = document.getElementById('toggleSidebar');
+            const toggleSidebarMobileBtn = document.getElementById('toggleSidebarMobile');
+            const mainContent = document.getElementById('mainContent');
+
+            // Toggle sidebar
+            toggleSidebarBtn.addEventListener('click', function() {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
+            });
+
+            // Toggle sidebar for mobile
+            toggleSidebarMobileBtn.addEventListener('click', function() {
+                sidebar.classList.toggle('collapsed');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('analyticsChart').getContext('2d');
+    const analyticsChart = new Chart(ctx, {
+        type: 'line', // You can change this to 'bar', 'pie', etc.
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Active Users',
+                data: [120, 150, 180, 200, 220, 240, 260],
+                backgroundColor: 'rgba(0, 255, 204, 0.2)', // Fill color
+                borderColor: 'rgba(0, 255, 204, 1)', // Line color
+                borderWidth: 2,
+                pointBackgroundColor: 'rgba(0, 255, 204, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(0, 255, 204, 1)'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    ticks: {
+                        color: '#e0e0e0',
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: '#e0e0e0',
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#00ffcc' // Color for the legend text
+                    }
+                }
+            }
+        }
+    });
+});
+
+    </script>
   
 </body>
 </html>
