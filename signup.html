@@ -14,15 +14,181 @@
         </div>
         <div class="box_content">
             <h1>Create Your Account</h1>
-            <form action="">
-                <input type="text" name="username" id="username" placeholder="Username" required>
-                <input type="email" name="email" id="email" placeholder="Email ID" required>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password"required>
+            <form id="signUpPage" action="User_Profile.html">
+
+                <div class="inputContainer">
+                    <label for="username"><i class="fas fa-user"></i> Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                    <div id="usernameError" class="error"></div>
+                </div>
+
+
+                <div class="inputContainer">
+                    <label for="email"><i class="fas fa-envelope"></i> Email ID:</label>
+                    <input type="email" name="email" id="email" placeholder="Email ID" required>
+                    <div id="emailError" class="error"></div>
+                </div>
+
+
+                <div class="inputContainer">
+                    <label for="password"><i class="fas fa-lock"></i> Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <div id="passwordError" class="error"></div>
+                    <div class="strength-meter">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                    <div id="passwordStrengthText"></div>
+                </div>
+                
+
+
+                <div class="inputContainer">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password:</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"required>
+                    <label for="showPassword" class="showPassword">
+                        <input type="checkbox" name="showPassword" id="showPassword"> Show Password
+                    </label>
+                    <div id="confirmPasswordError" class="error"></div>
+                </div>
+
+
                 <p>Already Have an Account? <a href="SignIn.html">Sign In</a></p>
-                <button type="submit"><a href="UserDashboard.html" style="text-decoration: none;">Sign Up</a></button>
+
+                
+                <button type="submit" id="submitBtn">Sign Up</button>
             </form>
         </div>
     </div>
+
+
+    <script>
+        document.getElementById('signUpPage').addEventListener('submit',function(event){
+            event.preventDefault();
+
+            clearErrors();
+
+            const username=document.getElementById('username').value;
+            const email=document.getElementById('email').value;
+            const password=document.getElementById('password').value;
+            const confirmPassword=document.getElementById('confirmPassword').value;
+
+            let isValid=true;
+
+            if(username.length<4 || username.length>15){
+                showError('usernameError','Username must be between 4 and 15 characters.');
+                isValid=false;
+            }
+
+            const emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if(!email.match(emailPattern)){
+                showError('emailError','Invalid Email Format.');
+                isValid=false;
+            }
+
+            if(password.length < 6){
+                showError('passwordError','Password must be atleast 6 characters long.');
+                isValid=false;
+            }
+
+            if(password !== confirmPassword){
+            showError('confirmPasswordError','Passwords do not match.');
+            isValid=false;
+            }
+            {
+            if(isValid){
+                console.log("Form is Valid. submitting.");
+                this.submit();
+            }
+            else{
+                console.log("Form is invalid, not submitting.");
+            }
+            }
+        });
+
+        
+        function clearErrors(){
+            const errorElements=document.querySelectorAll('.error');
+            errorElements.forEach(function(errorElement){
+                errorElement.textContent='';
+            });
+        }
+
+        function showError(elementId,message){
+            document.getElementById(elementId).textContent=message;
+        }
+
+
+
+        const passwordInput=document.getElementById('password');
+        const strengthMeter=document.querySelector('.strength-meter');
+        const passwordStrengthText=document.getElementById('passwordStrengthText');
+        const showPasswordCheckbox=document.getElementById('showPassword');
+        const confirmPasswordInput=document.getElementById('confirmPassword');
+
+        showPasswordCheckbox.addEventListener('change',function(){
+            if(this.checked){
+                passwordInput.type='text';
+                confirmPasswordInput.type='text';
+            }
+            else{
+                passwordInput.type='password';
+                confirmPasswordInput.type='password';
+            }
+        });
+
+        passwordInput.addEventListener('input',function(){
+            const strength=checkPasswordStrength(passwordInput.value);
+            updateStrengthMeter(strength);
+        });
+
+        function checkPasswordStrength(password){
+            let strength=0;
+            if(password.length >= 6) strength++;
+            if(/[A-Z]/.test(password)) strength++;
+            if(/[0-9]/.test(password)) strength++;
+            if(/[@$!%*?&#]/.test(password)) strength++;
+
+            return strength;
+        }
+
+        function updateStrengthMeter(strength){
+            const bars=strengthMeter.querySelectorAll('div');
+            bars.forEach((bar,index) => {
+                if(index < strength){
+                    bar.classList.add('active');
+                }
+                else{
+                    bar.classList.remove('active');
+                }
+            });
+
+            switch(strength){
+                case 0:
+                    passwordStrengthText.textContent="Password is too Weak";
+                    passwordStrengthText.style.color="red";
+                    break;
+
+                case 1:
+                    passwordStrengthText.textContent="Password is too Weak";
+                    passwordStrengthText.style.color="red";
+                    break;
+
+                case 2:
+                    passwordStrengthText.textContent="Password is Weak";
+                    passwordStrengthText.style.color="orange";
+                    break;
+                
+                case 3:
+                    passwordStrengthText.textContent="Password is Fair";
+                    passwordStrengthText.style.color="darkorange";
+                    break;
+
+                case 4:
+                    passwordStrengthText.textContent="Password is Strong";
+                    passwordStrengthText.style.color="green";
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>
