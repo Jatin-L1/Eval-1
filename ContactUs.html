@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +9,13 @@
     <script src="https://kit.fontawesome.com/4e7e795b1c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="ContactUs.css">
     <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("SL9c6eeNMc5YvMXIi");
+        })();
+    </script>
 </head>
 
 <body class="body">
@@ -62,33 +68,32 @@
         </div>
     </nav>
 
+    <!-- Contact Section -->
     <div class="container">
         <div class="image-section"></div>
         <div class="contact-section">
-         <div class="contact-background">
-            <h1>Contact Us</h1>
-            <p>Get in touch with us for more information about SecureX.</p>
-            <ul>
-                <li>Protect your chats with passwords</li>
-                <li>Confidential business chats are more secure now</li>
-                <li>Chat anywhere, anytime</li>
-            </ul>
-            <div class="additional-content">
-                <p>Our team is here to help you with any inquiries or any issues related to SecureX. If you are facing any problems, don't hesitate to contact us, we are happy to assist you.</p>
-            </div>
-            <!-- <div class="image-container">
-                <img src="images/ContactUs.webp" alt="Contact Us">
-            </div> -->
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+            <div class="contact-background">
+                <h1>Contact Us</h1>
+                <p>Get in touch with us for more information about SecureX.</p>
+                <ul>
+                    <li>Protect your chats with passwords</li>
+                    <li>Confidential business chats are more secure now</li>
+                    <li>Chat anywhere, anytime</li>
+                </ul>
+                <div class="additional-content">
+                    <p>Our team is here to help you with any inquiries or any issues related to SecureX. If you are facing any problems, don't hesitate to contact us, we are happy to assist you.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
-    </div>
 
+        <!-- Info Section with Contact Form -->
         <div class="info-section">
             <div class="contact-info">
                 <h4 style="font-size: 25px;">SecureX- Chat Application</h4>
@@ -96,33 +101,84 @@
                 <p>Email: <a href="mailto:hardik0680.be23@chitkara.edu.in">hardik0680.be23@chitkara.edu.in</a></p>
                 <p>Phone: <a href="tel:+91 6284881755">+91 6284881755</a></p>
             </div>
+
             <div class="additional-info">
                 <div class="contact-form">
                     <h4 style="font-size: 25px;">Commercial Requests</h4>
-                    <form action="submit_form_endpoint" method="post">
-                        <input type="text" name="name" placeholder="Full Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                        <button type="submit">Submit Request</button>
+                    <!-- Contact Form -->
+                    <form id="contactForm">
+                        <input type="text" id="fullName" name="name" placeholder="Full Name" required>
+                        <span id="nameError" class="error-message" style="color: red;"></span> <!-- Error for Name -->
+                        
+                        <input type="email" id="email_id" name="email" placeholder="Email" required>
+                        <span id="emailError" class="error-message" style="color: red;"></span> <!-- Error for Email -->
+                        
+                        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                        <span id="messageError" class="error-message" style="color: red;"></span> <!-- Error for Message -->
+
+                        <button type="button" onclick="validateAndSendMail()">Submit Request</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Validation and EmailJS Script -->
     <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar-dark');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Function to validate form and send email
+        function validateAndSendMail() {
+            // Clear previous error messages
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email_id").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            let isValid = true;
+
+            // Validate Full Name
+            if (fullName.length < 2) {
+                document.getElementById("nameError").textContent = "Full Name must be at least 2 characters long.";
+                isValid = false;
             }
-        });
+
+            // Validate Email using regex
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            // Validate Message
+            if (message.length < 5) {
+                document.getElementById("messageError").textContent = "Message must be at least 5 characters long.";
+                isValid = false;
+            }
+
+            // If form is valid, send the email
+            if (isValid) {
+                var params = {
+                    from_name: fullName,
+                    email_id: email,
+                    message: message
+                };
+
+                emailjs.send("service_f6dkktn", "template_f1iwjht", params)
+                    .then(function(res) {
+                        alert("Success! " + res.status);
+                    })
+                    .catch(function(error) {
+                        alert("Failed to send email. Please try again.");
+                    });
+            }
+        }
     </script>
 </body>
-
 </html>
