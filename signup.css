@@ -92,10 +92,12 @@ input[type="password"] {
     border-radius: 5px;
     border: 1.5px solid rgb(207, 206, 206);
     font-size: 1rem;
-    margin-bottom: 15px; 
+    margin-bottom: 25px; 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+input[type="password"]{
+    margin-top: 10px;
+}
 
 .error {
     color: red;

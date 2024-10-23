@@ -14,7 +14,7 @@
         </div>
         <div class="box_content">
             <h1>Create Your Account</h1>
-            <form id="signUpPage" action="User_Profile.html">
+            <form id="signUpPage" action="User_Profile.html" method="GET">
 
                 <div class="inputContainer">
                     <label for="username"><i class="fas fa-user"></i> Username:</label>
@@ -43,7 +43,7 @@
 
 
                 <div class="inputContainer">
-                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password:</label>
+                    <label for="confirmPassword" ><i class="fas fa-lock"></i> Confirm Password:</label>
                     <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"required>
                     <label for="showPassword" class="showPassword">
                         <input type="checkbox" name="showPassword" id="showPassword"> Show Password
@@ -94,15 +94,13 @@
             showError('confirmPasswordError','Passwords do not match.');
             isValid=false;
             }
-            {
+            
             if(isValid){
                 console.log("Form is Valid. submitting.");
                 this.submit();
             }
-            else{
-                console.log("Form is invalid, not submitting.");
-            }
-            }
+            
+            
         });
 
         
@@ -188,6 +186,7 @@
                     passwordStrengthText.style.color="green";
                     break;
             }
+
         }
     </script>
 </body>
