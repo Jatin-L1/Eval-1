@@ -36,14 +36,15 @@
             <!-- <h1>User Profile Dashboard</h1> -->
             <!-- Welcome Message -->
             <div class="welcome_message">
-                <h2>Welcome Back, Emily!</h2>
-                <p>Last login: August 25, 2024</p>
+                <h2 id="welcomeMessage">Welcome Back </h2>
+                <p id="lastLogin">Last login:</p>
             </div>
             <!-- Profile Image -->
             <div class="profile_image">
                 <div class="main_image">
-                    <img src="images/profile1.png" alt="">
+                    <img id="profileImage" src="images/defaultImage.jpg" alt="">
                 </div>
+                <input type="file" name="fileInput" id="fileInput" style="display:none" accept="image/*">
                 <button type="button" class="btn btn-primary" id="edit_profile_picture">Edit Profile Picture</button>
             </div>
             <!-- User Information -->
@@ -52,7 +53,7 @@
                 <div class="info_item">
                     <div class="items">
                         <label for="username">Username:</label>
-                        <span id="username">Emily</span>
+                        <span id="username"></span>
                     </div>
                     <button type="button" class="btn  btn-sm" id="edit_username">Edit Username</button>
                 </div>
@@ -122,5 +123,72 @@
          </div>
          
     </div>
+
+
+    <script>
+        function getQueryParameters(){
+            const parameters= new URLSearchParams(window.location.search);
+            return{
+                username: parameters.get('username'),
+                email: parameters.get('email'),
+                date: parameters.get('date')
+            };
+        }
+
+        const formData=getQueryParameters();
+        console.log("User Data from Sign Up:", formData);
+
+        const usernameSpan=document.getElementById('username');
+        if(formData.username){
+            document.getElementById('welcomeMessage').textContent=`Welcome ${formData.username}!`;
+            usernameSpan.textContent=formData.username;
+        }
+
+        if(formData.date){
+            document.getElementById('lastLogin').textContent=`Last Login: ${formData.date}`;
+        }
+
+        
+        
+
+        const fileInput=document.getElementById('fileInput');
+        const profileImage=document.getElementById('profileImage');
+        const editProfilePictureBtn=document.getElementById('edit_profile_picture');
+
+        editProfilePictureBtn.addEventListener('click', function(){
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change',function(event){
+            const file=event.target.files[0];
+            if(file){
+                const reader=new FileReader();
+                reader.onload=function(e){
+                    profileImage.src=e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        const editUsernameBtn=document.getElementById('edit_username');
+        editUsernameBtn.addEventListener('click',function(){
+            const currentUsername= usernameSpan.textContent;
+
+            usernameSpan.innerHTML=`<input type="text" id="usernameInput" value=${currentUsername}/>`;
+            editUsernameBtn.textContent="Save";
+
+            editUsernameBtn.addEventListener('click',saveUsername);
+        });
+
+        function saveUsername(){
+            const usernameInput=document.getElementById('usernameInput');
+            const newUsername=usernameInput.value;
+
+            usernameSpan.textContent=newUsername;
+            editUsernameBtn.textContent="Edit Username";
+
+            editUsernameBtn.removeEventListener('click',saveUsername);
+        }
+    </script>
 </body>
 </html>

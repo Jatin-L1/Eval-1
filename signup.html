@@ -50,7 +50,7 @@
                     </label>
                     <div id="confirmPasswordError" class="error"></div>
                 </div>
-
+                <input type="hidden" id="lastLoginDate" name="date">
 
                 <p>Already Have an Account? <a href="SignIn.html">Sign In</a></p>
 
@@ -71,6 +71,7 @@
             const email=document.getElementById('email').value;
             const password=document.getElementById('password').value;
             const confirmPassword=document.getElementById('confirmPassword').value;
+            
 
             let isValid=true;
 
@@ -97,6 +98,9 @@
             
             if(isValid){
                 console.log("Form is Valid. submitting.");
+                const date=new Date();
+                const formattedDate=date.toLocaleString();
+                document.getElementById('lastLoginDate').value=formattedDate;
                 this.submit();
             }
             
@@ -122,6 +126,7 @@
         const passwordStrengthText=document.getElementById('passwordStrengthText');
         const showPasswordCheckbox=document.getElementById('showPassword');
         const confirmPasswordInput=document.getElementById('confirmPassword');
+        
 
         showPasswordCheckbox.addEventListener('change',function(){
             if(this.checked){
