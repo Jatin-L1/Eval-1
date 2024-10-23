@@ -1,12 +1,14 @@
-/* Main body and global styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0d1117, #1f2937);
+    background-color: #0d1117; 
+    color: #cccccc;
 }
 
-/* Navbar styles */
+
+
 .navbar-dark {
     background-color: #0d1117; 
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -46,7 +48,7 @@ body {
     transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
 }
 
-/* Remove underline effect for Features dropdown */
+
 .navbar-nav .nav-item.dropdown .nav-link::after {
     display: none;
 }
@@ -105,7 +107,7 @@ body {
     display: flex;
 }
 
-/* Styles to handle mobile view of dropdown */
+
 @media (max-width: 768px) {
     .dropdown-menu {
         position: static;
@@ -141,7 +143,7 @@ body {
     }
 }
 
-/* Feature Card Styles */
+
 .feature-card {
     background-color: #ffffff;
     border-radius: 10px;
@@ -292,54 +294,19 @@ body {
     width: 100%;
     font-size: 16px;
 }
-
 footer {
-    padding: 20px;
-    background-color: #f8f8f8;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #000428;
+    color: #cccccc;
+    padding: 10px 0;
 }
 
-footer p {
-    margin: 0;
-    flex: 1;
-    text-align: left;
+footer a {
+    color: #cccccc;
 }
 
-footer nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    flex: 2;
-    flex-wrap: wrap;
+footer a:hover {
+    color: #ffffff;
 }
-
-footer nav ul li {
-    margin: 0 15px;
-}
-
-footer nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-footer .social-icons {
-    flex: 1;
-    text-align: right;
-}
-
-footer .social-icons a {
-    margin: 0 5px;
-    color: #333;
-    text-decoration: none;
-}
-
 @media (max-width: 768px) {
     .content-section {
         flex-direction: column;

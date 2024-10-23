@@ -8,12 +8,86 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="Faq.css">
+    <style>
+       
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Same color as the navbar */
+    color: #cccccc;
+ }
+
+
+        /* Highlight active question */
+        .accordion-item.active {
+            background-color: #f0f8ff; /* Light highlight color */
+            border-left: 4px solid #0d6efd;
+        }
+
+        .accordion-button {
+            cursor: pointer;
+            background-color: #1f2937;
+            color: #fff;
+        }
+
+        .accordion-button.collapsed {
+            background-color: transparent;
+        }
+
+        /* Search box styling */
+        .search-bar {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #0d6efd;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hide search result if no match */
+        .faq-item.hidden {
+            display: none;
+        }
+
+        /* FAQ section spacing */
+        .content-section {
+            padding: 20px;
+        }
+
+
+/* Navbar styles */
+.navbar-dark {
+    background-color: #0d1117; /* Same color as body */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(60, 60, 100, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Section */
+footer {
+    background-color: #0d1117; /* Same color as navbar and body */
+    color: #cccccc;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #cccccc;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+    </style>
 </head>
 <body>
-    <!-- Navbar Section from Main Site -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="logo" height="70px" width="140px"></a>
+            <a class="navbar-brand" href="index.html"><img src="/Eval-1/images/Logo.png" alt="logo" height="70px" width="140px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,17 +142,23 @@
     </nav>
 
     <!-- FAQ Content Section -->
-    <div class="head">
-        <h1>Frequently Asked Questions</h1>
+    <div class="head d-flex mx-5">
+        <h1 class="mx-3">Frequently Asked Questions</h1>
+        <div class="search-bar">
+            <input type="text" id="faq-search" class="form-control" placeholder="Search FAQs...">
+        </div>
     </div>
 
     <div class="content-section">
+        <!-- Search Bar for FAQ -->
+
+
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="accordion-button text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             What is a secure chat app?
                         </button>
                     </h2>
@@ -88,9 +168,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             How does the passcode feature work?
                         </button>
                     </h2>
@@ -100,9 +180,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Is my chat data stored on the server?
                         </button>
                     </h2>
@@ -112,9 +192,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             Is the app vulnerable to hacking?
                         </button>
                     </h2>
@@ -124,9 +204,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                             How do I know my chat is secure?
                         </button>
                     </h2>
@@ -136,9 +216,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingSix">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        <button class="accordion-button collapsed text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                             What devices are supported by the secure chat app?
                         </button>
                     </h2>
@@ -148,9 +228,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item faq-item">
                     <h2 class="accordion-header" id="headingSeven">
-                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        <button class="accordion-button collapsed text-dark " type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                             Can I recover messages if I accidentally delete them?
                         </button>
                     </h2>
@@ -160,42 +240,131 @@
                         </div>
                     </div>
                 </div>
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingEight">
+                        <button class="accordion-button collapsed  text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            Can I use the app on multiple devices?
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, you can seamlessly use the app on multiple devices. Whether you’re on a smartphone, tablet, or desktop, the app supports iOS, Android, and major web browsers. Your conversations stay in sync across all devices, ensuring you can switch between them effortlessly without losing any messages or data, all while maintaining the same high level of security and encryption.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingNine">
+                        <button class="accordion-button collapsed text-dark " type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                            What happens if I forget my passcode?
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            If you forget your passcode. You can easily reset it through the app. However, for your security, resetting the passcode will prevent access to previous encrypted conversations since the old passcode was used to protect them. This ensures that only you can access your chats, even in the event of a forgotten passcode. Your new passcode will apply to all future messages, maintaining the same high level of security.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingTen">
+                        <button class="accordion-button collapsed text-dark " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                            Is there a limit to how many people I can add to a group chat?
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            es, you can add up as many as participants you want in a single group chat. This allows you to securely communicate with large teams, communities, or groups of friends. Every message sent in the group is protected by end-to-end encryption, ensuring that all participants’ conversations remain private and secure, no matter how many people are involved.
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Question Section -->
         <section class="question-section">
-            <div class="photo-placeholder">
-                <img src="images/Faq.jpeg" alt="Placeholder Image">
-            </div>
             <h3>Any Question?</h3>
             <p style="color: white;">You can ask anything you want to know about Feedback.</p>
             <form>
                 <input type="text" placeholder="Let me know..." />
-                <button type="submit">Sent</button>
+                <button type="submit">Send</button>
             </form>
+            <div class="photo-placeholder">
+                <img src="/Eval-1/images/ForgotPass.png" alt="Placeholder Image">
+            </div>
         </section>
     </div>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; SecureX </p>
-        <nav>
-            <ul>
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="ContactUs.html">Contact Us</a></li>
-                <li><a href="Faq.html">FAQ</a></li>
-                <li><a href="SignIn.html">Sign In</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <a href="www.facebook.com">Facebook</a>
-            <a href="www.instagram.com">Instagram</a>
-            <a href="www.twitter.com">Twitter</a>
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p class="text"> We are committed to providing secure and seamless messaging solutions that connect you with those who matter most, no matter where you are.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                        <li><a href="Features.html"style="text-decoration: none;">Features</a></li>
+                        <li><a href="ContactUs.html" style="text-decoration: none;">ContactUs</a></li>
+                        <li><a href="signup.html" style="text-decoration: none;"> Sign Up</a></li>
+                        <li><a href="AboutUs.html" style="text-decoration: none;">About Us</a></li>
+                        <li><a href="Faq.html" style="text-decoration: none;">FAQ</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>
+                        Email: support@yourwebsite.com<br>
+                        Phone: +1 234 567 890
+                    </p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="copyright">&copy; 2024 SecureX. All Rights Reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS for Search Bar -->
+    <script>
+        // Collapsible FAQ Sections with Highlight
+        document.querySelectorAll('.accordion-button').forEach((button) => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.accordion-item').forEach(item => item.classList.remove('active'));
+                if (!this.classList.contains('collapsed')) {
+                    this.closest('.accordion-item').classList.add('active');
+                }
+            });
+        });
+
+        // Searchable FAQ Functionality
+        const faqSearchInput = document.getElementById('faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqSearchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase();
+            faqItems.forEach(item => {
+                const questionText = item.querySelector('.accordion-button').textContent.toLowerCase();
+                if (questionText.includes(query)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
