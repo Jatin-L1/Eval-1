@@ -136,10 +136,10 @@
         const usernameSpan = document.getElementById('username');
         const emailSpan = document.getElementById('email');
         const lastLoginSpan = document.getElementById('lastLogin');
-        const alternateEmailSpan = document.getElementById('alternate_email'); // For alternate email
-        const dobSpan = document.getElementById('DOB'); // For Date of Birth
-        const passwordSpan = document.getElementById('Password'); // For password
-        const twoFactorSpan = document.getElementById('two_factor'); // For two-factor authentication status
+        const alternateEmailSpan = document.getElementById('alternate_email'); 
+        const dobSpan = document.getElementById('DOB'); 
+        const passwordSpan = document.getElementById('Password'); 
+        const twoFactorSpan = document.getElementById('two_factor'); 
         const welcomeMessage = document.getElementById('welcomeMessage');
         const profileImageContainer = document.getElementById('profileImageContainer');
         const statusSelect = document.getElementById('statusSelect');
@@ -148,47 +148,47 @@
         const statusDisplay = document.getElementById('statusDisplay');
 
         if (formData.username) {
-        welcomeMessage.textContent = `Welcome ${formData.username}!`;  // Update welcome message
-        usernameSpan.textContent = formData.username;  // Set username
+        welcomeMessage.textContent = `Welcome ${formData.username}!`;  
+        usernameSpan.textContent = formData.username;  
     }
 
     if (formData.email) {
-        emailSpan.textContent = formData.email;  // Set email
+        emailSpan.textContent = formData.email;  
     }
 
     if (formData.date) {
-        lastLoginSpan.textContent = `Last login: ${formData.date}`;  // Set last login
+        lastLoginSpan.textContent = `Last login: ${formData.date}`;  
     } else {
-        lastLoginSpan.textContent = `Last login: Not Available`;  // Default message if no date is passed
+        lastLoginSpan.textContent = `Last login: Not Available`;  
     }
 
     if (formData.password) {
-        passwordSpan.textContent = '********';  // Masked password display
+        passwordSpan.textContent = '********';  
     }
 
         // Show the dropdown when "Change Status" is clicked
         changeStatusBtn.addEventListener('click', function() {
-            statusSelect.style.display = 'block';  // Show the dropdown
-            saveStatusBtn.style.display = 'inline-block';  // Show the save button
-            changeStatusBtn.style.display = 'none';  // Hide the change button
+            statusSelect.style.display = 'block';  
+            saveStatusBtn.style.display = 'inline-block';  
+            changeStatusBtn.style.display = 'none';  
         });
 
         // Save the selected status and update the display
         saveStatusBtn.addEventListener('click', function() {
-            const selectedStatus = statusSelect.value;  // Get the selected status
-            statusDisplay.textContent = selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1);  // Update the display
-            statusSelect.style.display = 'none';  // Hide the dropdown
-            saveStatusBtn.style.display = 'none';  // Hide the save button
-            changeStatusBtn.style.display = 'inline-block';  // Show the change button
+            const selectedStatus = statusSelect.value;  
+            statusDisplay.textContent = selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1);  
+            statusSelect.style.display = 'none';  
+            saveStatusBtn.style.display = 'none';  
+            changeStatusBtn.style.display = 'inline-block';  
         });
 
         // Notifications Toggle Button
         const toggleNotificationsBtn = document.getElementById('toggle_notifications');
         const notificationsSpan = document.getElementById('notifications');
-        let notificationsEnabled = true;  // Assuming notifications start as 'Enabled'
+        let notificationsEnabled = true;  
 
         toggleNotificationsBtn.addEventListener('click', function() {
-            notificationsEnabled = !notificationsEnabled;  // Toggle the status
+            notificationsEnabled = !notificationsEnabled;  
             notificationsSpan.textContent = notificationsEnabled ? 'Enabled' : 'Disabled';
             toggleNotificationsBtn.textContent = notificationsEnabled ? 'Disable' : 'Enable';
         });
@@ -294,7 +294,7 @@
                 const passwordInput = document.getElementById('passwordInput');
                 const newPassword = passwordInput.value;
                 if (newPassword.trim() !== '') {
-                    passwordSpan.textContent = "**********"; // Masked again
+                    passwordSpan.textContent = "**********"; 
                     changePasswordBtn.textContent = "Change Password";
                     isChangingPassword = false;
                 } else {
