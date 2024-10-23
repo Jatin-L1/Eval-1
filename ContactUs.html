@@ -11,11 +11,35 @@
     <link rel="stylesheet" href="styles.css">
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.0/tsparticles.bundle.min.js"></script> <!-- tsParticles -->
     <script type="text/javascript">
         (function() {
             emailjs.init("SL9c6eeNMc5YvMXIi");
         })();
     </script>
+    <style>
+        #thankYouMessage {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        /* Customize the canvas for particles */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999; /* Ensure it's on top of everything */
+            pointer-events: none; /* Allow clicking through */
+        }
+    </style>
 </head>
 
 <body class="body">
@@ -121,7 +145,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- Thank You Message Section -->
+        <div id="thankYouMessage">Thank you for your request! We will get back to you soon.</div>
     </div>
+
+    <!-- Particles container -->
+    <div id="tsparticles"></div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -129,56 +159,108 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Validation and EmailJS Script -->
-    <script>
-        // Function to validate form and send email
-        function validateAndSendMail() {
-            // Clear previous error messages
-            document.getElementById("nameError").textContent = "";
-            document.getElementById("emailError").textContent = "";
-            document.getElementById("messageError").textContent = "";
+    <!-- Validation and EmailJS Script -->
+<script>
+    // Function to validate form and send email
+    function validateAndSendMail() {
+        // Clear previous error messages
+        document.getElementById("nameError").textContent = "";
+        document.getElementById("emailError").textContent = "";
+        document.getElementById("messageError").textContent = "";
 
-            const fullName = document.getElementById("fullName").value.trim();
-            const email = document.getElementById("email_id").value.trim();
-            const message = document.getElementById("message").value.trim();
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email_id").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-            let isValid = true;
+        let isValid = true;
 
-            // Validate Full Name
-            if (fullName.length < 2) {
-                document.getElementById("nameError").textContent = "Full Name must be at least 2 characters long.";
-                isValid = false;
-            }
-
-            // Validate Email using regex
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                document.getElementById("emailError").textContent = "Please enter a valid email address.";
-                isValid = false;
-            }
-
-            // Validate Message
-            if (message.length < 5) {
-                document.getElementById("messageError").textContent = "Message must be at least 5 characters long.";
-                isValid = false;
-            }
-
-            // If form is valid, send the email
-            if (isValid) {
-                var params = {
-                    from_name: fullName,
-                    email_id: email,
-                    message: message
-                };
-
-                emailjs.send("service_f6dkktn", "template_f1iwjht", params)
-                    .then(function(res) {
-                        alert("Success! " + res.status);
-                    })
-                    .catch(function(error) {
-                        alert("Failed to send email. Please try again.");
-                    });
-            }
+        // Validate Full Name
+        if (fullName.length < 2) {
+            document.getElementById("nameError").textContent = "Full Name must be at least 2 characters long.";
+            isValid = false;
         }
-    </script>
+
+        // Validate Email using regex
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").textContent = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        // Validate Message
+        if (message.length < 5) {
+            document.getElementById("messageError").textContent = "Message must be at least 5 characters long.";
+            isValid = false;
+        }
+
+        // If form is valid, send the email
+        if (isValid) {
+            var params = {
+                from_name: fullName,
+                email_id: email,
+                message: message
+            };
+
+            emailjs.send("service_f6dkktn", "template_f1iwjht", params)
+                .then(function(res) {
+                    // Display success message and particles
+                    document.getElementById("thankYouMessage").style.display = "block";
+                    loadParticles();
+
+                    // Stop particles after 5 seconds
+                    setTimeout(function() {
+                        tsParticles.domItem(0).destroy();  // Stops the particles
+                    }, 5000);
+                })
+                .catch(function(error) {
+                    alert("Failed to send email. Please try again.");
+                });
+        }
+    }
+
+    // Function to load tsParticles after form submission with falling effect
+    function loadParticles() {
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: {
+                    value: 100
+                },
+                size: {
+                    value: 3
+                },
+                move: {
+                    enable: true,
+                    speed: 3, 
+                    direction: "bottom", 
+                    straight: false 
+                },
+                color: {
+                    value: ["#f8c1ff", "#e9a7ff", "#d494ff", "#bc7fff"] 
+                },
+                shape: {
+                    type: "circle"
+                },
+                opacity: {
+                    value: 0.7, 
+                },
+                line_linked: {
+                    enable: false 
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: false 
+                    },
+                    onclick: {
+                        enable: false 
+                    }
+                }
+            },
+
+        });
+    }
+</script>
+
 </body>
 </html>
