@@ -33,17 +33,17 @@
         
         <!-- Main content -->
          <div class="main_content">
-            <!-- <h1>User Profile Dashboard</h1> -->
             <!-- Welcome Message -->
             <div class="welcome_message">
-                <h2>Welcome Back, Emily!</h2>
-                <p>Last login: August 25, 2024</p>
+                <h2 id="welcomeMessage">Welcome Back </h2>
+                <p id="lastLogin">Last login:</p>
             </div>
             <!-- Profile Image -->
             <div class="profile_image">
                 <div class="main_image">
-                    <img src="images/profile1.png" alt="">
+                    <img id="profileImage" src="images/defaultImage.jpg" alt="">
                 </div>
+                <input type="file" name="fileInput" id="fileInput" style="display:none" accept="image/*">
                 <button type="button" class="btn btn-primary" id="edit_profile_picture">Edit Profile Picture</button>
             </div>
             <!-- User Information -->
@@ -52,75 +52,309 @@
                 <div class="info_item">
                     <div class="items">
                         <label for="username">Username:</label>
-                        <span id="username">Emily</span>
+                        <span id="username">-None-</span>
                     </div>
-                    <button type="button" class="btn  btn-sm" id="edit_username">Edit Username</button>
+                    <button type="button" class="btn btn-sm" id="edit_username">Edit Username</button>
                 </div>
                 <div class="info_item">
                     <div class="items">
                         <label for="email">Email ID:</label>
-                        <span id="email">abc@gmail.com</span>
+                        <span id="email">-None-</span>
                     </div>
-                        <button type="button" class="btn  btn-sm" id="edit_email">Edit Email ID</button>
+                    <button type="button" class="btn btn-sm" id="edit_email">Edit Email ID</button>
                 </div>
                 <div class="info_item">
                     <div class="items">
                         <label for="alternate_email">Alternate Email:</label>
                         <span id="alternate_email">-None-</span>
                     </div>
-                    <button type="button" class="btn  btn-sm" id="add_email">Add Alternate Email ID</button>
+                    <button type="button" class="btn btn-sm" id="add_email">Add Alternate Email ID</button>
                 </div>
                 <div class="info_item">
                     <div class="items">
                         <label for="DOB">Date of Birth:</label>
-                        <span id="DOB">24th September,2004</span>
+                        <span id="DOB">-None-</span>
                     </div>
-                    <button type="button" class="btn  btn-sm" id="edit_DOB">Edit DOB</button>
+                    <button type="button" class="btn btn-sm" id="edit_DOB">Edit DOB</button>
                 </div>
              </div>
             <!-- Security Settings -->
-        <div class="security_settings">
-            <p id="security_info">Security Settings</p>
-            <div class="info_item">
-                <label for="Password">Password:</label>
-                <span id="Password">**********</span>
-                <button type="button" class="btn  btn-sm" id="change_password">Change Password</button>
+            <div class="security_settings">
+                <p id="security_info">Security Settings</p>
+                <div class="info_item">
+                    <label for="Password">Password:</label>
+                    <span id="Password">**********</span>
+                    <button type="button" class="btn btn-sm" id="change_password">Change Password</button>
+                </div>
+                <div class="info_item">
+                    <label for="two_factor">Two-Factor Authentication:</label>
+                    <span id="two_factor">Enable</span>
+                    <button type="button" class="btn btn-sm" id="disable_two_factor">Disable</button>
+                </div>
             </div>
-            <div class="info_item">
-                <label for="two_factor">Two-Factor Authentication:</label>
-                <span id="two_factor">Enable</span>
-                <button type="button" class="btn  btn-sm" id="disable_two_factor">Disable</button>
-            </div>
-        </div>
 
             <!-- Chat Preferences -->
-             <div class="chat_info">
+            <div class="chat_info">
                 <p id="chat_info">Chat Preferences:</p>
                 <div class="info_item">
                     <div class="items">
-                        <label for="active">Status:</label>
-                        <span id="active">Online</span>
+                        <label for="status">Status:</label>
+                        <span id="statusDisplay">Online</span>
                     </div>
-                    <button type="button" class="btn  btn-sm" id="change_status">Change Status</button>
+                    <select id="statusSelect" class="form-control" style="display: none;">
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                        <option value="ghost">Ghost Mode</option>
+                    </select>
+                    <button type="button" class="btn btn-sm" id="changeStatusBtn">Change Status</button>
+                    <button type="button" class="btn btn-sm" id="saveStatusBtn" style="display: none;">Save Status</button>
                 </div>
                 <div class="info_item">
                     <div class="items">
                         <label for="notifications">Notifications:</label>
                         <span id="notifications">Enabled</span>
                     </div>
-                    <button type="button" class="btn  btn-sm" id="disable_notifications">Disable</button>
-                </div>
-                <div class="info_item">
-                    <div class="items">
-                        <label for="autolock">Auto-Lock Chat:</label>
-                        <span id="autolock">After 5 minutes</span>
-                    </div>
-                    <button type="button" class="btn  btn-sm" id="change_setting">Change Setting</button>
+                    <button type="button" class="btn btn-sm" id="toggle_notifications">Disable</button>
                 </div>
              </div>
-            
          </div>
-         
     </div>
+
+    <script>
+        // Retrieve query parameters
+        function getQueryParameters() {
+            const parameters = new URLSearchParams(window.location.search);
+            return {
+                username: parameters.get('username'),
+                email: parameters.get('email'),
+                date: parameters.get('date'),
+                password: parameters.get('password')
+            };
+        }
+
+        const formData = getQueryParameters();
+        const usernameSpan = document.getElementById('username');
+        const emailSpan = document.getElementById('email');
+        const lastLoginSpan = document.getElementById('lastLogin');
+        const alternateEmailSpan = document.getElementById('alternate_email'); // For alternate email
+        const dobSpan = document.getElementById('DOB'); // For Date of Birth
+        const passwordSpan = document.getElementById('Password'); // For password
+        const twoFactorSpan = document.getElementById('two_factor'); // For two-factor authentication status
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        const profileImageContainer = document.getElementById('profileImageContainer');
+        const statusSelect = document.getElementById('statusSelect');
+        const changeStatusBtn = document.getElementById('changeStatusBtn');
+        const saveStatusBtn = document.getElementById('saveStatusBtn');
+        const statusDisplay = document.getElementById('statusDisplay');
+
+        if (formData.username) {
+        welcomeMessage.textContent = `Welcome ${formData.username}!`;  // Update welcome message
+        usernameSpan.textContent = formData.username;  // Set username
+    }
+
+    if (formData.email) {
+        emailSpan.textContent = formData.email;  // Set email
+    }
+
+    if (formData.date) {
+        lastLoginSpan.textContent = `Last login: ${formData.date}`;  // Set last login
+    } else {
+        lastLoginSpan.textContent = `Last login: Not Available`;  // Default message if no date is passed
+    }
+
+    if (formData.password) {
+        passwordSpan.textContent = '********';  // Masked password display
+    }
+
+        // Show the dropdown when "Change Status" is clicked
+        changeStatusBtn.addEventListener('click', function() {
+            statusSelect.style.display = 'block';  // Show the dropdown
+            saveStatusBtn.style.display = 'inline-block';  // Show the save button
+            changeStatusBtn.style.display = 'none';  // Hide the change button
+        });
+
+        // Save the selected status and update the display
+        saveStatusBtn.addEventListener('click', function() {
+            const selectedStatus = statusSelect.value;  // Get the selected status
+            statusDisplay.textContent = selectedStatus.charAt(0).toUpperCase() + selectedStatus.slice(1);  // Update the display
+            statusSelect.style.display = 'none';  // Hide the dropdown
+            saveStatusBtn.style.display = 'none';  // Hide the save button
+            changeStatusBtn.style.display = 'inline-block';  // Show the change button
+        });
+
+        // Notifications Toggle Button
+        const toggleNotificationsBtn = document.getElementById('toggle_notifications');
+        const notificationsSpan = document.getElementById('notifications');
+        let notificationsEnabled = true;  // Assuming notifications start as 'Enabled'
+
+        toggleNotificationsBtn.addEventListener('click', function() {
+            notificationsEnabled = !notificationsEnabled;  // Toggle the status
+            notificationsSpan.textContent = notificationsEnabled ? 'Enabled' : 'Disabled';
+            toggleNotificationsBtn.textContent = notificationsEnabled ? 'Disable' : 'Enable';
+        });
+
+        // Edit Username Functionality
+        const editUsernameBtn = document.getElementById('edit_username');
+        let isEditingUsername = false;
+        editUsernameBtn.addEventListener('click', function() {
+            if (!isEditingUsername) {
+                const currentUsername = usernameSpan.textContent;
+                usernameSpan.innerHTML = `<input type="text" id="usernameInput" value="${currentUsername}" />`;
+                editUsernameBtn.textContent = "Save";
+                isEditingUsername = true;
+            } else {
+                const usernameInput = document.getElementById('usernameInput');
+                const newUsername = usernameInput.value;
+                if (newUsername.trim() !== '') {
+                    usernameSpan.textContent = newUsername;
+                    welcomeMessage.textContent = `Welcome ${newUsername}!`;
+                    editUsernameBtn.textContent = "Edit Username";
+                    isEditingUsername = false;
+                } else {
+                    alert("Username cannot be empty!");
+                }
+            }
+        });
+
+        // Edit Email Functionality
+        const editEmailBtn = document.getElementById('edit_email');
+        let isEditingEmail = false;
+        editEmailBtn.addEventListener('click', function() {
+            if (!isEditingEmail) {
+                const currentEmail = emailSpan.textContent;
+                emailSpan.innerHTML = `<input type="email" id="emailInput" value="${currentEmail}" />`;
+                editEmailBtn.textContent = "Save";
+                isEditingEmail = true;
+            } else {
+                const emailInput = document.getElementById('emailInput');
+                const newEmail = emailInput.value;
+                if (newEmail.trim() !== '' && validateEmail(newEmail)) {
+                    emailSpan.textContent = newEmail;
+                    editEmailBtn.textContent = "Edit Email ID";
+                    isEditingEmail = false;
+                } else {
+                    alert("Please enter a valid email address!");
+                }
+            }
+        });
+
+        // Add/Edit Alternate Email
+        const addEmailBtn = document.getElementById('add_email');
+        let isAddingAlternateEmail = false;
+        addEmailBtn.addEventListener('click', function() {
+            if (!isAddingAlternateEmail) {
+                const currentAlternateEmail = alternateEmailSpan.textContent === "-None-" ? "" : alternateEmailSpan.textContent;
+                alternateEmailSpan.innerHTML = `<input type="email" id="alternateEmailInput" value="${currentAlternateEmail}" />`;
+                addEmailBtn.textContent = "Save";
+                isAddingAlternateEmail = true;
+            } else {
+                const alternateEmailInput = document.getElementById('alternateEmailInput');
+                const newAlternateEmail = alternateEmailInput.value;
+                if (newAlternateEmail.trim() !== '' && validateEmail(newAlternateEmail)) {
+                    alternateEmailSpan.textContent = newAlternateEmail;
+                    addEmailBtn.textContent = "Add Alternate Email ID";
+                    isAddingAlternateEmail = false;
+                } else {
+                    alert("Please enter a valid email address!");
+                }
+            }
+        });
+
+        // Edit Date of Birth (DOB)
+        const editDobBtn = document.getElementById('edit_DOB');
+        let isEditingDOB = false;
+        editDobBtn.addEventListener('click', function() {
+            if (!isEditingDOB) {
+                const currentDOB = dobSpan.textContent;
+                dobSpan.innerHTML = `<input type="date" id="dobInput" value="${convertToISODate(currentDOB)}" />`;
+                editDobBtn.textContent = "Save";
+                isEditingDOB = true;
+            } else {
+                const dobInput = document.getElementById('dobInput');
+                const newDOB = dobInput.value;
+                if (newDOB.trim() !== '') {
+                    dobSpan.textContent = formatDate(newDOB);
+                    editDobBtn.textContent = "Edit DOB";
+                    isEditingDOB = false;
+                } else {
+                    alert("Date of Birth cannot be empty!");
+                }
+            }
+        });
+
+        // Change Password Functionality
+        const changePasswordBtn = document.getElementById('change_password');
+        let isChangingPassword = false;
+        changePasswordBtn.addEventListener('click', function() {
+            if (!isChangingPassword) {
+                passwordSpan.innerHTML = `<input type="password" id="passwordInput" placeholder="Enter new password" />`;
+                changePasswordBtn.textContent = "Save Password";
+                isChangingPassword = true;
+            } else {
+                const passwordInput = document.getElementById('passwordInput');
+                const newPassword = passwordInput.value;
+                if (newPassword.trim() !== '') {
+                    passwordSpan.textContent = "**********"; // Masked again
+                    changePasswordBtn.textContent = "Change Password";
+                    isChangingPassword = false;
+                } else {
+                    alert("Password cannot be empty!");
+                }
+            }
+        });
+
+        // Two-Factor Authentication Toggle
+        const toggleTwoFactorBtn = document.getElementById('disable_two_factor');
+        let twoFactorEnabled = formData.two_factor === 'Enable';
+        toggleTwoFactorBtn.addEventListener('click', function() {
+            twoFactorEnabled = !twoFactorEnabled;
+            twoFactorSpan.textContent = twoFactorEnabled ? 'Enabled' : 'Disabled';
+            toggleTwoFactorBtn.textContent = twoFactorEnabled ? 'Disable' : 'Enable';
+        });
+
+        // Validate Email Function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Convert current formatted DOB to ISO date format (YYYY-MM-DD)
+        function convertToISODate(dob) {
+            const [day, month, year] = dob.split(/[\s,]+/);
+            const months = {
+                January: '01', February: '02', March: '03', April: '04',
+                May: '05', June: '06', July: '07', August: '08',
+                September: '09', October: '10', November: '11', December: '12'
+            };
+            return `${year}-${months[month]}-${day.padStart(2, '0')}`;
+        }
+
+        // Format ISO date (YYYY-MM-DD) to display as DDth Month, YYYY
+        function formatDate(isoDate) {
+            const date = new Date(isoDate);
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            return date.toLocaleDateString('en-GB', options);
+        }
+
+        // Profile Picture Upload Logic
+        const fileInput = document.getElementById('fileInput');
+        const profileImage = document.getElementById('profileImage');
+        const editProfilePictureBtn = document.getElementById('edit_profile_picture');
+
+        editProfilePictureBtn.addEventListener('click', function() {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    profileImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
