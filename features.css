@@ -1,4 +1,7 @@
 /* General Styles */
+html{
+    scroll-behavior: smooth;
+}
 /* Navbar styles */
 .navbar-dark {
     background-color: linear-gradient(135deg, #0a0c1a, #0b1b34, #10243f, #152e4a);
@@ -340,3 +343,32 @@ html, body {
         font-size: 13px;
     }
 }
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+#particles-js {
+    position: fixed; /* Make sure particles stay fixed to the background */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none; /* Ensure interactions happen with content, not particles */
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1; /* Ensure the content stays above particles */
+    padding: 20px;
+    min-height: 100vh; /* Ensure this covers the full height */
+}
+
+
+
