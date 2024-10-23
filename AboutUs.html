@@ -398,3 +398,23 @@ Your browser does not support the video tag.
             duration: 1200,
         });
     </script>
+    <script>
+        // Simple Form validation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const name = document.querySelector('input[name="name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const message = document.querySelector('textarea[name="message"]').value;
+
+    
+    if (name.trim() === '') {
+        alert('Please enter your name.');
+        e.preventDefault();
+    } else if (!email.includes('@') || !email.includes('.')) {
+        alert('Please enter a valid email address.');
+        e.preventDefault();
+    } else if (message.trim() === '') {
+        alert('Please enter your message.');
+        e.preventDefault();
+    }
+});
+</script>
