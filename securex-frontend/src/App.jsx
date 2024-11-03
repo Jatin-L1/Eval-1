@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import './assets/styles.css'; // Global CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Signup from './components/Signup'
 
 
 const App = () => {
@@ -16,10 +17,11 @@ const App = () => {
     <>
       <Navbar />
       <Hero />
-      <StayConnected /> {/* Add the StayConnected component here */}
+      <StayConnected /> 
       <SecureChat />
       <EmailSync />
       <Footer />
+      {/* <Signup/> */}
     </>
   );
 };
