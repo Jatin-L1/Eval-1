@@ -6,12 +6,12 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword: ""
   });
 
   const [errors, setErrors] = useState({});
   const [passwordStrength, setPasswordStrength] = useState(0);
-  const [strengthClass, setStrengthClass] = useState(""); // State for strength class
+  const [strengthClass, setStrengthClass] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleInputChange = (e) => {
@@ -19,9 +19,7 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const clearErrors = () => {
-    setErrors({});
-  };
+  const clearErrors = () => setErrors({});
 
   const showError = (field, message) => {
     setErrors((prevErrors) => ({ ...prevErrors, [field]: message }));
@@ -55,15 +53,35 @@ const Signup = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form is Valid. Submitting.");
-      const date = new Date().toLocaleString();
-      // Proceed with form submission or API call here
+      try {
+        const response = await fetch("http://localhost:5000/api/auth/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: formData.username,
+            email: formData.email,
+            password: formData.password
+          })
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          alert("User registered successfully");
+          setFormData({ username: "", email: "", password: "", confirmPassword: "" });
+        } else {
+          alert(data.message || "Registration failed");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      }
     }
   };
 
+  
   const checkPasswordStrength = (password) => {
     let strength = 0;
     if (password.length >= 6) strength++;
@@ -73,12 +91,12 @@ const Signup = () => {
 
     setPasswordStrength(strength);
 
-    // Assign class based on strength
+   
     if (strength === 1) setStrengthClass("weak");
     else if (strength === 2) setStrengthClass("medium");
     else if (strength === 3) setStrengthClass("fair");
     else if (strength === 4) setStrengthClass("strong");
-    else setStrengthClass(""); // Default state
+    else setStrengthClass(""); 
   };
 
   const toggleShowPassword = () => {
@@ -86,121 +104,120 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup">
-        <div className="signup-box">
-      <div className="box_image">
-        <img src="./Images/signup_image.jpeg" alt="Signup Visual" />
-      </div>
-      <div className="box_content">
-        <h1>Create Your Account</h1>
-        <form id="signUpPage" onSubmit={handleSubmit}>
-          <div className="inputContainer">
-            <label htmlFor="username">
-              <i className="fas fa-user" /> Username:
-            </label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="Username"
-              required
-              value={formData.username}
-              onChange={handleInputChange}
-            />
-            {errors.usernameError && <div className="error">{errors.usernameError}</div>}
+        <div className="signup">
+            <div className="signup-box">
+          <div className="box_image">
+            <img src="./Images/signup_image.jpeg" alt="Signup Visual" />
           </div>
-
-          <div className="inputContainer">
-            <label htmlFor="email">
-              <i className="fas fa-envelope" /> Email ID:
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email ID"
-              required
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            {errors.emailError && <div className="error">{errors.emailError}</div>}
-          </div>
-
-          <div className="inputContainer">
-            <label htmlFor="password">
-              <i className="fas fa-lock" /> Password:
-            </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              id="password"
-              placeholder="Password"
-              required
-              value={formData.password}
-              onChange={(e) => {
-                handleInputChange(e);
-                checkPasswordStrength(e.target.value);
-              }}
-            />
-            {errors.passwordError && <div className="error">{errors.passwordError}</div>}
-            <div className={`strength-meter ${strengthClass}`}>
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className={i < passwordStrength ? "active" : ""} />
-              ))}
-            </div>
-            {/* Display password strength text only if there is a password entered */}
-            {formData.password && (
-              <div id="passwordStrengthText" className={strengthClass}>
-                {passwordStrength === 1
-                  ? "Password is too Weak"
-                  : passwordStrength === 2
-                  ? "Password is Weak"
-                  : passwordStrength === 3
-                  ? "Password is Fair"
-                  : passwordStrength === 4
-                  ? "Password is Strong"
-                  : "Password is too Weak"}
+          <div className="box_content">
+            <h1>Create Your Account</h1>
+            <form id="signUpPage" onSubmit={handleSubmit}>
+              <div className="inputContainer">
+                <label htmlFor="username">
+                  <i className="fas fa-user" /> Username:
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Username"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                {errors.usernameError && <div className="error">{errors.usernameError}</div>}
               </div>
-            )}
+    
+              <div className="inputContainer">
+                <label htmlFor="email">
+                  <i className="fas fa-envelope" /> Email ID:
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email ID"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                {errors.emailError && <div className="error">{errors.emailError}</div>}
+              </div>
+    
+              <div className="inputContainer">
+                <label htmlFor="password">
+                  <i className="fas fa-lock" /> Password:
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                  value={formData.password}
+                  onChange={(e) => {
+                    handleInputChange(e);
+                    checkPasswordStrength(e.target.value);
+                  }}
+                />
+                {errors.passwordError && <div className="error">{errors.passwordError}</div>}
+                <div className={`strength-meter ${strengthClass}`}>
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className={i < passwordStrength ? "active" : ""} />
+                  ))}
+                </div>
+                {}
+                {formData.password && (
+                  <div id="passwordStrengthText" className={strengthClass}>
+                    {passwordStrength === 1
+                      ? "Password is too Weak"
+                      : passwordStrength === 2
+                      ? "Password is Weak"
+                      : passwordStrength === 3
+                      ? "Password is Fair"
+                      : passwordStrength === 4
+                      ? "Password is Strong"
+                      : "Password is too Weak"}
+                  </div>
+                )}
+              </div>
+    
+              <div className="inputContainer">
+                <label htmlFor="confirmPassword">
+                  <i className="fas fa-lock" /> Confirm Password:
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="confirmPassword"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                  value={formData.confirmPassword}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="showPassword" className="showPassword">
+                  <input
+                    type="checkbox"
+                    name="showPassword"
+                    id="showPassword"
+                    checked={showPassword}
+                    onChange={toggleShowPassword}
+                  />{" "}
+                  Show Password
+                </label>
+                {errors.confirmPasswordError && <div className="error">{errors.confirmPasswordError}</div>}
+              </div>
+    
+              <p>
+                Already Have an Account? <a href="SignIn.html">Sign In</a>
+              </p>
+              <button type="submit" id="submitBtn">
+                Sign Up
+              </button>
+            </form>
           </div>
-
-          <div className="inputContainer">
-            <label htmlFor="confirmPassword">
-              <i className="fas fa-lock" /> Confirm Password:
-            </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              name="confirmPassword"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-              required
-              value={formData.confirmPassword}
-              onChange={handleInputChange}
-            />
-            <label htmlFor="showPassword" className="showPassword">
-              <input
-                type="checkbox"
-                name="showPassword"
-                id="showPassword"
-                checked={showPassword}
-                onChange={toggleShowPassword}
-              />{" "}
-              Show Password
-            </label>
-            {errors.confirmPasswordError && <div className="error">{errors.confirmPasswordError}</div>}
-          </div>
-
-          <p>
-            Already Have an Account? <a href="SignIn.html">Sign In</a>
-          </p>
-          <button type="submit" id="submitBtn">
-            Sign Up
-          </button>
-        </form>
-      </div>
-    </div>
-    </div>
-  );
-};
-
+        </div>
+        </div>
+      );
+    };
 export default Signup;
