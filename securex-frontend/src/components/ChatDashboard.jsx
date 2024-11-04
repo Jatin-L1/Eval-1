@@ -35,7 +35,7 @@ const ChatDashboard = () => {
             </li>
           </ul>
         </div>
-        <div className={`user_profile_container ${isSidebarCollapsed ? 'expanded' : ''}`}>
+        <div className="user_profile_container">
           <div className="side_nav">
             <div className="side_nav_contents">
               <div className="profile_pic">
@@ -60,7 +60,7 @@ const ChatDashboard = () => {
               </div>
             </div>
           </div>
-          <div className={`main-content ${isSidebarCollapsed ? 'expanded' : ''}`} id="mainContent">
+          <div className="main-content" id="mainContent">
             <div className="header">
               <div className="user-info">
                 <img

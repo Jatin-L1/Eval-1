@@ -939,19 +939,3 @@ body,.main {
         left: 70px;
     } */
 }
-
-/* When sidebar is collapsed, expand the chat area */
-.user_profile_container.expanded {
-    margin-left: 60px; /* Adjust margin as needed */
-}
-
-.main-content.expanded {
-    margin-left: 0;
-    width: calc(100% - 60px); /* Expands the chat area */
-    transition: width 0.3s ease;
-}
-
-.sidebar.collapsed {
-    width: 60px;
-}
-
