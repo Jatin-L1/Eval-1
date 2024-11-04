@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Signup from './components/Signup'
 import UserProfile from './components/UserProfile';
+import ChatDashboard from './components/ChatDashboard';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <Footer />
       {/* <Signup/> */}
       {/* <UserProfile/> */}
+      {/* <ChatDashboard/> */}
     </>
   );
 };
