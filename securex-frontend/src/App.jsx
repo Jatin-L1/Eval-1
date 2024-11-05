@@ -1,34 +1,34 @@
-// // // src/App.jsx
-// // import React from 'react';
-// // import Navbar from './components/Navbar';
-// // import Hero from './components/Hero';
-// // import StayConnected from './components/StayConnected'; // Import the new component
-// // import SecureChat from './components/SecureChat';
-// // import EmailSync from './components/EmailSync';
-// // import Footer from './components/Footer';
-// // import './assets/styles.css'; // Global CSS
-// // import 'bootstrap/dist/css/bootstrap.min.css';
-// // import '@fortawesome/fontawesome-free/css/all.min.css';
-// // import Signup from './components/Signup'
-// // import UserProfile from './components/UserProfile';
+// // src/App.jsx
+// import React from 'react';
+// import Navbar from './components/Navbar';
+// import Hero from './components/Hero';
+// import StayConnected from './components/StayConnected'; // Import the new component
+// import SecureChat from './components/SecureChat';
+// import EmailSync from './components/EmailSync';
+// import Footer from './components/Footer';
+// import './assets/styles.css'; // Global CSS
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+// import Signup from './components/Signup'
+// import UserProfile from './components/UserProfile';
 
 
-// // const App = () => {
-// //   return (
-// //     <>
-// //       <Navbar />
-// //       <Hero />
-// //       <StayConnected /> 
-// //       <SecureChat />
-// //       <EmailSync />
-// //       <Footer />
-// //       <Signup/>
-// //       {/* <UserProfile/> */}
-// //     </>
-// //   );
-// // };
+// const App = () => {
+//   return (
+//     <>
+//       <Navbar />
+//       <Hero />
+//       <StayConnected /> 
+//       <SecureChat />
+//       <EmailSync />
+//       <Footer />
+//       <Signup/>
+//       {/* <UserProfile/> */}
+//     </>
+//   );
+// };
 
-// // export default App;
+// export default App;
 
 // src/App.jsx
 import React from 'react';
@@ -41,6 +41,7 @@ import EmailSync from './components/EmailSync';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
+// import ChatDashboard from './components/ChatDashboard';
 import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -54,6 +55,7 @@ const LandingPage = () => {
       <SecureChat />
       <EmailSync />
       <Footer />
+      {/* <ChatDashboard /> */}
     </>
   );
 };
@@ -75,25 +77,3 @@ const App = () => {
 };
 
 export default App;
-
-
-src/App.jsx
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Login from './components/Login'; // Import your Login component
-// import './assets/styles.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <Routes>
-//         {/* Define the route for the Login page only */}
-//         <Route path="/" element={<Login />} />
-//       </Routes>
-//     </Router>
-//   );
-// };
-
-// export default App;
