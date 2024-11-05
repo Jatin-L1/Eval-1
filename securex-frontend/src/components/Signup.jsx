@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../assets/signup.css";
 
 const Signup = () => {
@@ -208,8 +209,11 @@ const Signup = () => {
                 {errors.confirmPasswordError && <div className="error">{errors.confirmPasswordError}</div>}
               </div>
     
+              {/* <p>
+                Already Have an Account? <a href="/Login">Sign In</a>
+              </p> */}
               <p>
-                Already Have an Account? <a href="SignIn.html">Sign In</a>
+                Already Have an Account? <Link to ="/Login">Sign In</Link>
               </p>
               <button type="submit" id="submitBtn">
                 Sign Up
