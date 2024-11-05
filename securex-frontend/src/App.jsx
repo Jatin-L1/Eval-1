@@ -41,7 +41,7 @@ import EmailSync from './components/EmailSync';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
-import ChatDashboard from './components/ChatDashboard';
+// import ChatDashboard from './components/ChatDashboard';
 import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -55,6 +55,7 @@ const LandingPage = () => {
       <SecureChat />
       <EmailSync />
       <Footer />
+      {/* <ChatDashboard /> */}
     </>
   );
 };
