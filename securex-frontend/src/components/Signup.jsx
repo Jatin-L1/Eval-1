@@ -238,6 +238,7 @@ import { Link } from "react-router-dom";
 import { auth } from '../firebaseConfig'; // Import the configured auth from firebaseConfig.js
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import "../assets/signup.css";
+import signup_image from '../assets/signup_image.jpeg';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -289,7 +290,7 @@ const Signup = () => {
     <div className="signup">
       <div className="signup-box">
         <div className="box_image">
-          <img src="./Images/signup_image.jpeg" alt="Signup Visual" />
+          <img src={signup_image} alt="Signup Visual" />
         </div>
         <div className="box_content">
           <h1>Create Your Account</h1>

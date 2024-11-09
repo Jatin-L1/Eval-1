@@ -65,6 +65,7 @@ import SecureChat from './components/SecureChat';
 import EmailSync from './components/EmailSync';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
+import AboutUs from './components/AboutUs'; 
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
@@ -96,8 +97,9 @@ const App = () => {
         {/* Other page routes */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<UserProfile />} />
+        {/* <Route path="/profile" element={<UserProfile />} /> */}
 
         {/* Chat Dashboard route */}
         <Route path="/chatdashboard" element={<ChatDashboard />} />
