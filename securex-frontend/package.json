@@ -22,7 +22,9 @@
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "stream-chat": "^8.43.0",
-    "stream-chat-react": "^12.5.1"
+    "stream-chat-react": "^12.5.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

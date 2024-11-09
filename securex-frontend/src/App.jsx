@@ -68,6 +68,8 @@ import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
+import PrivateRoute from './components/PrivateRoute';
+import Features from './components/Features';
 import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -93,6 +95,7 @@ const App = () => {
         
         {/* Other page routes */}
         <Route path="/signup" element={<Signup />} />
+        <Route path="/features" element={<Features />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<UserProfile />} />
 
