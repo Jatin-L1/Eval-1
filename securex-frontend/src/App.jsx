@@ -56,7 +56,6 @@
 // };
 
 // export default App;
-// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -69,23 +68,20 @@ import Signup from './components/Signup';
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
-import PrivateRoute from './components/PrivateRoute'; // Ensure this exists and works correctly
 import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Define a LandingPage component for the home page layout
-const LandingPage = () => {
-  return (
-    <>
-      <Hero />
-      <StayConnected />
-      <SecureChat />
-      <EmailSync />
-      <Footer />
-    </>
-  );
-};
+const LandingPage = () => (
+  <>
+    <Hero />
+    <StayConnected />
+    <SecureChat />
+    <EmailSync />
+    <Footer />
+  </>
+);
 
 const App = () => {
   return (
@@ -100,18 +96,15 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<UserProfile />} />
 
-        {/* ChatDashboard route protected by PrivateRoute */}
-        <Route 
-          path="/chatdashboard" 
-          element={
-            <PrivateRoute>
-              <ChatDashboard />
-            </PrivateRoute>
-          } 
-        />
+        {/* Chat Dashboard route */}
+        <Route path="/chatdashboard" element={<ChatDashboard />} />
+
+        {/* Optional 404 - Uncomment if you have a NotFound component */}
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </Router>
   );
 };
 
 export default App;
+
