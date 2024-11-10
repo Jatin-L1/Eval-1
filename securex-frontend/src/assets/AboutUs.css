@@ -738,5 +738,12 @@ a:hover {
     background-color: #0d6efd;
     z-index: 1000;
 }
+body {
+    background-color: #000; /* Set this to black or a dark color */
+    color: white;
+}
 
- 
+.about-container {
+    background-color: #000;
+    color: white;
+}
