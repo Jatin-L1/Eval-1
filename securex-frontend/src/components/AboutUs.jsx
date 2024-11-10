@@ -80,7 +80,7 @@ const AboutUs = () => {
         <div className="about-container">
             <div id="progress-bar"></div>
             {/* Hero Section */}
-            <section id="hero" className="parallax">
+            <section id="hero" className="parallax_1">
                 <video autoPlay muted loop playsInline id="background-video">
                     <source src={AboutUsVideo} type="video/mp4" />
                     Your browser does not support the video tag.
