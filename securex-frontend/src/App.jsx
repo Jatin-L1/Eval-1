@@ -65,13 +65,13 @@ import SecureChat from './components/SecureChat';
 import EmailSync from './components/EmailSync';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
-import AboutUs from './components/AboutUs'; 
 // import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
 // import PrivateRoute from './components/PrivateRoute';
 import Features from './components/Features';
-import './assets/styles.css';
+import AboutUs from './components/AboutUs'; 
+// import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
