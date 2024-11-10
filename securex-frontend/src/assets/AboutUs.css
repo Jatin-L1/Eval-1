@@ -610,10 +610,7 @@ a:hover {
     background-color: #0d6efd;
     z-index: 1000;
 }
-body {
-    background-color: #000; 
-    color: white;
-}
+/*  */
 
 .about-container {
     background-color: #000;
