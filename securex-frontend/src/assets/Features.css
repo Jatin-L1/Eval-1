@@ -17,6 +17,17 @@ html {
     overflow-x: hidden;
     background: linear-gradient(135deg, #0a0c1a, #0b1b34, #10243f, #152e4a);
 }
+/* .headingContainer {
+    background-image: url('../Images/features.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    height: 60vh;
+    margin-top: -25px;
+    filter: blur(5px);
+    z-index: -1;
+}
 
 #features_heading {
     background: linear-gradient(135deg, #a2e9ff, #72cfff, #4ab3ff, #c2f4ff);
@@ -25,8 +36,37 @@ html {
     background-clip: text;
     text-align: center;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: -50px;
     font-size: 55px;
+    z-index: 1;
+} */
+
+.headingContainer {
+    position: relative;
+    background-image: url('../Images/features.jpg');  /* Replace with the actual path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(8px);
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -25px;
+}
+
+#features_heading {
+    position: relative;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    margin-top: -200px;
+    /* margin-bottom: 20px; */
+    z-index: 1;
+    /* Optional: add a slight shadow for text visibility */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .feature_cards {
@@ -38,7 +78,8 @@ html {
 }
 
 .feature-card {
-    background-color: white;
+    /* background-color: white; */
+    background-color: #10243f;
     text-align: center;
     height: 40vh;
     width: 50vh;
@@ -51,12 +92,11 @@ html {
     align-items: center;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue; */
+    text-shadow: 1px 1px 1.5px #005bb5, 0 0 0.5em #0066cc, 0 0 0.1em #0066cc;
+
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.3);
-}
 
 .feature-card .icon {
     font-size: 45px;
@@ -65,12 +105,27 @@ html {
 
 .feature-card h6 {
     font-size: 25px;
-    color: #111827;
+    /* color: #111827; */
+    color: white;
     font-weight: 600;
+    /* text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue; */
 }
 
 .feature-card p {
     font-size: 16px;
+    /* color: #161d2b; */
+    color: white;
+    /* text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue; */
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    /* box-shadow: #c2f4ff 0px 54px 55px, #c2f4ff 0px -12px 30px, #c2f4ff 0px 4px 6px, #c2f4ff 0px 12px 13px, #c2f4ff 0px -3px 5px; */
+    box-shadow: #4ab3ff 0px 54px 55px,#4ab3ff  0px -12px 30px, #4ab3ff 0px 4px 6px, #4ab3ff 0px 12px 13px,#4ab3ff  0px -3px 5px;
+    color: #161d2b;
+    text-shadow: none;
+}
+.feature-card:hover h6, .feature-card:hover p{
     color: #161d2b;
 }
 
@@ -176,14 +231,3 @@ html {
         font-size: 14px;
     }
 }
-
-#particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it stays in the background */
-    pointer-events: none;
-}
-
