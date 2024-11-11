@@ -69,7 +69,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
 // import PrivateRoute from './components/PrivateRoute';
-import AboutUs from './components/AboutUs'; 
+import Features from './components/Features';
+import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 // import './assets/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -97,9 +98,9 @@ const App = () => {
         {/* Other page routes */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/contact" element={<Contact/>}/>
         <Route path="/about" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
         {/* <Route path="/profile" element={<UserProfile />} /> */}
 
         {/* Chat Dashboard route */}
@@ -113,3 +114,4 @@ const App = () => {
 };
 
 export default App;
+

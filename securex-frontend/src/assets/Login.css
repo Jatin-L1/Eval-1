@@ -14,7 +14,7 @@ main {
     overflow: hidden;
 }
 
-.container {
+.container_1 {
     display: flex;
     width: 90%;
     max-width: 1000px;
@@ -23,7 +23,7 @@ main {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.login-section {
+.login-section_1 {
     padding: 60px 50px;
     background-color: #fff;
     flex: 1;
@@ -225,5 +225,11 @@ p a:hover {
     font-size: 14px;
     display: none;
     margin-top: 5px;
+}
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: left;
 }
 
