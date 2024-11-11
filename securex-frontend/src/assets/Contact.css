@@ -4,6 +4,8 @@ main {
     color: #e5e7eb;
     line-height: 1.6;
     animation: backgroundFade 2s ease-in-out;
+    padding-top: 600px;
+    padding-bottom: 650px;
 }
 
 h1, h6 {
