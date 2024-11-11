@@ -1,4 +1,3 @@
-// backend/config/pusher.js
 const Pusher = require("pusher");
 
 const pusher = new Pusher({
