@@ -65,7 +65,7 @@ import SecureChat from './components/SecureChat';
 import EmailSync from './components/EmailSync';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
-// import UserProfile from './components/UserProfile';
+import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import ChatDashboard from './components/ChatDashboard';
 // import PrivateRoute from './components/PrivateRoute';
@@ -105,10 +105,13 @@ const App = () => {
 
         {/* Chat Dashboard route */}
         <Route path="/chatdashboard" element={<ChatDashboard />} />
+        <Route path="/userprofile" element={<UserProfile />} />
 
         {/* Optional 404 - Uncomment if you have a NotFound component */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
+    <Footer />
+
     </Router>
   );
 };
