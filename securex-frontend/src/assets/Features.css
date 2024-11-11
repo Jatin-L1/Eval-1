@@ -1,15 +1,4 @@
-/* General Styles */
-html {
-    scroll-behavior: smooth;
-}
 
-/* Reset and Basic Styles */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', 'Montserrat', sans-serif;
-    box-sizing: border-box;
-}
 
 .featuresMain {
     width: 100%;
